@@ -1,7 +1,12 @@
+import { SearchBar } from '../components/Searchbar/Searchbar.component';
 import React from 'react';
 
 function Home() {
-  return <h1>Hello World</h1>;
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
 }
 
 export default Home;
