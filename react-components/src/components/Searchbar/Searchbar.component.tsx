@@ -18,6 +18,7 @@ export class SearchBar extends React.Component<Props, State> {
 
   hadleChange(event: ChangeEvent<HTMLInputElement>) {
     this.setState({ value: event.target.value });
+    localStorage.setItem('inputValue', event.target.value);
   }
 
   componentDidMount(): void {
