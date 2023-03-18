@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function About() {
   return (
     <div>
-      <div>About us page</div>;
+      <h1>About us page</h1>
+      <Link to="/">GO HOME</Link>
     </div>
   );
 }

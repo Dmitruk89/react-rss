@@ -21,7 +21,7 @@ export class Card extends React.Component<cardProps> {
   render() {
     return (
       <div className="product_card">
-        <img src={this.props.content.img} alt="" />
+        <img src={this.props.content.img} alt="product-image" />
         <p className="product_name">{this.props.content.name}</p>
         <p>{this.props.content.description}</p>
         <p className="product_price price">{this.props.content.price}.00 €</p>
