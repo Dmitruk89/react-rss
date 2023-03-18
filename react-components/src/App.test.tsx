@@ -4,9 +4,15 @@ import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
 import { WrappedApp, App } from './App';
+import { products } from './mock/products';
 import React from 'react';
 
 describe('App', () => {
+  it('Renders proper amount of products', () => {
+    render(<WrappedApp />);
+    const Cards = screen.getAllByAltText('product-image');
+    expect(Cards).toHaveLength(products.length);
+  });
   it('Renders current page name correctly', async () => {
     render(<WrappedApp />);
     expect(
