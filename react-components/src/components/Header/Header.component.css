@@ -1,0 +1,33 @@
+header {
+  background-color: var(--header);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  color: var(--link);
+}
+
+h2 {
+  text-transform: uppercase;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.app-navigation a.active {
+  color: var(--link-active);
+  text-decoration: underline;
+}
