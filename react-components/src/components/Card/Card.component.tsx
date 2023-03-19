@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.component.css';
 import { MdAddShoppingCart } from 'react-icons/md';
+import { MdAdhoppingCart } from 'react-icons/md';
 
 type ProductProps = {
   img: string;
