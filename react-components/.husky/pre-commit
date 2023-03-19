@@ -1,3 +1,3 @@
 #!/bin/sh
 cd react-components
-npm run lint
+npx lint-staged
