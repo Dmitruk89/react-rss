@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "cd .. && husky install react-components/.husky"
   },
   "dependencies": {
     "@testing-library/user-event": "^14.4.3",
@@ -37,7 +38,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "jsdom": "^21.1.0",
     "lint-staged": "^12.4.1",
     "prettier": "^2.8.4",
