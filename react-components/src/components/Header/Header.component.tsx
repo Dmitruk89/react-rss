@@ -36,6 +36,9 @@ export class Header extends React.Component<Props, HeaderState> {
               <NavLink to={`about`}>About us</NavLink>
             </li>
             <li onClick={this.refreshLocation.bind(this)}>
+              <NavLink to={`form`}>Form</NavLink>
+            </li>
+            <li onClick={this.refreshLocation.bind(this)}>
               <NavLink to={`not-exist`}></NavLink>
             </li>
           </ul>
