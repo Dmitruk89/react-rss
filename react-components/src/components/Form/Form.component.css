@@ -6,3 +6,12 @@
   color: var(--link);
   gap: 20px;
 }
+
+.form input,
+.form select {
+  margin-left: 10px;
+}
+
+.form input[type='submit'] {
+  margin-left: 0;
+}
