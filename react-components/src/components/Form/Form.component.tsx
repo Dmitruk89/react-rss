@@ -4,7 +4,16 @@ import './Form.component.css';
 import { genders } from '../../mock/genders';
 
 interface Props {
-  children?: React.ReactNode;
+  onFormSubmit: (data: formData) => void;
+}
+
+export interface formData {
+  name?: string;
+  agree?: string;
+  birthday?: string;
+  avatar?: string;
+  spam?: string;
+  gender?: string;
 }
 
 export class Form extends React.Component<Props> {
@@ -36,6 +45,7 @@ export class Form extends React.Component<Props> {
       gender: this.gender?.current?.value,
     };
     console.log(formData);
+    this.props.onFormSubmit(formData);
     event.preventDefault();
   }
 
@@ -69,14 +79,14 @@ export class Form extends React.Component<Props> {
           <div>
             <label>
               Sure
-              <input type="radio" name="spam" value="yes" defaultChecked />
+              <input type="radio" name="spam" value="yes" ref={this.spam} defaultChecked />
             </label>
           </div>
 
           <div>
             <label>
               No way!
-              <input type="radio" name="spam" value="no" />
+              <input type="radio" name="spam" ref={this.spam} value="no" />
             </label>
           </div>
         </fieldset>
