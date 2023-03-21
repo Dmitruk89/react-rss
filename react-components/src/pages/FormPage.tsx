@@ -1,6 +1,7 @@
 import { Form, formData } from '../components/Form/Form.component';
 import React from 'react';
 import { FormCard } from '../components/FormCardComponent/FormCard.component';
+import '../App.css';
 
 interface Props {
   children?: React.ReactNode;
@@ -28,9 +29,11 @@ export class FormPage extends React.Component<Props, State> {
       <div>
         <h1>Form page</h1>
         <Form onFormSubmit={this.handleFormSubmit.bind(this)} />
-        {this.state.cards.map((data, i) => {
-          return <FormCard key={i} formData={data} />;
-        })}
+        <div className="card_container">
+          {this.state.cards.map((data, i) => {
+            return <FormCard key={i} formData={data} />;
+          })}
+        </div>
       </div>
     );
   }

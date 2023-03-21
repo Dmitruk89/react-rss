@@ -36,15 +36,21 @@ export class Form extends React.Component<Props> {
   }
 
   handleSubmit(event: React.SyntheticEvent) {
+    const FileList = this.avatar.current?.files;
+    const images = [];
+    if (FileList) {
+      images.push(URL.createObjectURL(FileList[0]));
+    }
+
     const formData = {
       name: this.name.current?.value,
       agree: this.agree.current?.value,
       birthday: this.birthday.current?.value,
-      avatar: this.avatar.current?.value,
+      avatar: images[0],
       spam: this.spam.current?.value,
       gender: this.gender?.current?.value,
     };
-    console.log(formData);
+
     this.props.onFormSubmit(formData);
     event.preventDefault();
   }
@@ -82,7 +88,6 @@ export class Form extends React.Component<Props> {
               <input type="radio" name="spam" value="yes" ref={this.spam} defaultChecked />
             </label>
           </div>
-
           <div>
             <label>
               No way!
