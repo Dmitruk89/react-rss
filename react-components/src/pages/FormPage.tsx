@@ -25,6 +25,8 @@ export class FormPage extends React.Component<Props, State> {
     };
   }
 
+  autoClose!: ReturnType<typeof setTimeout>;
+
   handleFormSubmit(data: formData) {
     this.setState({ cards: [...this.state.cards, data] });
     this.showToast('success');
@@ -54,10 +56,12 @@ export class FormPage extends React.Component<Props, State> {
         this.setState({ toastList: [] });
     }
     this.setState({ toastList: [...this.state.toastList, toastProperties] });
+    this.autoClose = setTimeout(() => this.closeToast(id), 3000);
   }
 
   closeToast = (id: number) => {
     this.setState({ toastList: [...this.state.toastList.filter((i) => i.id !== id)] });
+    clearTimeout(this.autoClose);
   };
 
   render() {
