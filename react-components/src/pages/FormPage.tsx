@@ -31,8 +31,6 @@ export class FormPage extends React.Component<Props, State> {
   }
 
   showToast(type: string) {
-    console.log('show toast!!');
-
     const id = Math.floor(Math.random() * 100 + 1);
     let toastProperties: Notification = {};
     switch (type) {
@@ -40,8 +38,8 @@ export class FormPage extends React.Component<Props, State> {
         toastProperties = {
           id,
           title: 'Success',
-          description: 'This is a success toast component',
-          backgroundColor: '#5cb85c',
+          description: 'Form was successfully submitted',
+          backgroundColor: 'rgb(0 225 0)',
         };
         break;
       case 'danger':
@@ -55,14 +53,13 @@ export class FormPage extends React.Component<Props, State> {
       default:
         this.setState({ toastList: [] });
     }
-    console.log(toastProperties);
-
     this.setState({ toastList: [...this.state.toastList, toastProperties] });
   }
 
   closeToast = (id: number) => {
     this.setState({ toastList: [...this.state.toastList.filter((i) => i.id !== id)] });
   };
+
   render() {
     return (
       <div>
