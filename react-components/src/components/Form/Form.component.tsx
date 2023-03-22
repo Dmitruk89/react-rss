@@ -74,7 +74,7 @@ export class Form extends React.Component<Props> {
         </label>
         <label>
           Date of birth:
-          <input type="date" ref={this.formControls.birthday} required />
+          <input type="date" ref={this.formControls.birthday} />
         </label>
         <label>
           Choose your gender:
