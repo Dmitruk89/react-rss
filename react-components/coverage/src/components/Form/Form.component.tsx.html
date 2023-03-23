@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.25% </span>
+                <span class="strong">15.68% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/203</span>
+                <span class='fraction'>32/204</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.25% </span>
+                <span class="strong">15.68% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/203</span>
+                <span class='fraction'>32/204</span>
             </div>
         
             
@@ -266,7 +266,8 @@
 <a name='L201'></a><a href='#L201'>201</a>
 <a name='L202'></a><a href='#L202'>202</a>
 <a name='L203'></a><a href='#L203'>203</a>
-<a name='L204'></a><a href='#L204'>204</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -296,7 +297,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -483,7 +485,6 @@ interface State {
   isValidationVisible: boolean;
   isNameValid: boolean;
   isAvatarValid: boolean;
-  isFormValid: boolean;
 }
 &nbsp;
 export interface formData {
@@ -512,11 +513,10 @@ export class Form extends React.Component&lt;Props, State&gt; {
 <span class="cstat-no" title="statement not covered" >  constructor(props: Props) {</span>
 <span class="cstat-no" title="statement not covered" >    super(props);</span>
 <span class="cstat-no" title="statement not covered" >    this.state = {</span>
-<span class="cstat-no" title="statement not covered" >      isAgreeValid: false,</span>
-<span class="cstat-no" title="statement not covered" >      isValidationVisible: false,</span>
 <span class="cstat-no" title="statement not covered" >      isNameValid: false,</span>
 <span class="cstat-no" title="statement not covered" >      isAvatarValid: false,</span>
-<span class="cstat-no" title="statement not covered" >      isFormValid: false,</span>
+<span class="cstat-no" title="statement not covered" >      isAgreeValid: false,</span>
+<span class="cstat-no" title="statement not covered" >      isValidationVisible: false,</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -546,19 +546,15 @@ export class Form extends React.Component&lt;Props, State&gt; {
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  handleAgreeInput = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    console.log(this.formControls.agree.current?.checked);</span>
 <span class="cstat-no" title="statement not covered" >    const isAgree = this.formControls.agree.current?.checked;</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (isAgree) {</span>
 <span class="cstat-no" title="statement not covered" >      this.setState({ isAgreeValid: true });</span>
-<span class="cstat-no" title="statement not covered" >      return 'agreed with terms';</span>
+<span class="cstat-no" title="statement not covered" >      return 'agreed';</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      this.setState({ isAgreeValid: false });</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+<span class="cstat-no" title="statement not covered" >      return '';</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >  validateForm = () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    this.setState({});</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  handleSubmit = async (event: React.SyntheticEvent) =&gt; {</span>
@@ -566,7 +562,7 @@ export class Form extends React.Component&lt;Props, State&gt; {
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const formData = {</span>
 <span class="cstat-no" title="statement not covered" >      name: this.handleNameInput(),</span>
-<span class="cstat-no" title="statement not covered" >      agree: this.handleAgreeInput(),</span>
+<span class="cstat-no" title="statement not covered" >      agree: await this.handleAgreeInput(),</span>
 <span class="cstat-no" title="statement not covered" >      birthday: this.formControls.birthday.current?.value,</span>
 <span class="cstat-no" title="statement not covered" >      avatar: this.handleAvatarInput(),</span>
 <span class="cstat-no" title="statement not covered" >      spam: this.formControls.spamYes.current?.value</span>
@@ -574,6 +570,7 @@ export class Form extends React.Component&lt;Props, State&gt; {
 <span class="cstat-no" title="statement not covered" >        : this.formControls.spamNo.current?.value,</span>
 <span class="cstat-no" title="statement not covered" >      gender: this.formControls.gender?.current?.value,</span>
 <span class="cstat-no" title="statement not covered" >    };</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (</span>
 <span class="cstat-no" title="statement not covered" >      (await this.state.isAgreeValid) &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >      (await this.state.isAvatarValid) &amp;&amp;</span>
@@ -581,6 +578,12 @@ export class Form extends React.Component&lt;Props, State&gt; {
 <span class="cstat-no" title="statement not covered" >    ) {</span>
 <span class="cstat-no" title="statement not covered" >      this.props.onFormSubmit(formData);</span>
 <span class="cstat-no" title="statement not covered" >      (event.target as HTMLFormElement).reset();</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+<span class="cstat-no" title="statement not covered" >        isNameValid: false,</span>
+<span class="cstat-no" title="statement not covered" >        isAvatarValid: false,</span>
+<span class="cstat-no" title="statement not covered" >        isAgreeValid: false,</span>
+<span class="cstat-no" title="statement not covered" >        isValidationVisible: false,</span>
+<span class="cstat-no" title="statement not covered" >      });</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >      this.setState({ isValidationVisible: true });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -679,7 +682,7 @@ export class Form extends React.Component&lt;Props, State&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-03-23T11:12:50.388Z
+                at 2023-03-23T17:56:27.165Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
