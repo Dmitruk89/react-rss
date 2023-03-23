@@ -7,6 +7,13 @@ interface Props {
   onFormSubmit: (data: formData) => void;
 }
 
+interface State {
+  isAgreeValid: boolean;
+  isValidationVisible: boolean;
+  isNameValid: boolean;
+  isAvatarValid: boolean;
+}
+
 export interface formData {
   name?: string;
   agree?: string;
@@ -19,7 +26,7 @@ interface FormControls {
   [key: string]: React.RefObject<HTMLInputElement>;
 }
 
-export class Form extends React.Component<Props> {
+export class Form extends React.Component<Props, State> {
   formControls: FormControls = {
     name: React.createRef(),
     agree: React.createRef(),
@@ -32,31 +39,82 @@ export class Form extends React.Component<Props> {
 
   constructor(props: Props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      isNameValid: false,
+      isAvatarValid: false,
+      isAgreeValid: false,
+      isValidationVisible: false,
+    };
   }
 
-  handleSubmit(event: React.SyntheticEvent) {
-    const FileList = this.formControls.avatar.current?.files;
-    const images = [];
-    if (FileList) {
-      images.push(URL.createObjectURL(FileList[0]));
+  handleNameInput = () => {
+    const name = this.formControls.name.current?.value;
+    if (name && name?.length >= 4) {
+      this.setState({ isNameValid: true });
+      return name;
+    } else {
+      this.setState({ isNameValid: false });
+      return;
     }
+  };
+
+  handleAvatarInput = () => {
+    const fileList = this.formControls.avatar.current?.files;
+    const images = [];
+
+    if (fileList && fileList.length !== 0) {
+      images.push(URL.createObjectURL(fileList[0]));
+      this.setState({ isAvatarValid: true });
+      return images[0];
+    } else {
+      this.setState({ isAvatarValid: false });
+      return '';
+    }
+  };
+
+  handleAgreeInput = () => {
+    const isAgree = this.formControls.agree.current?.checked;
+
+    if (isAgree) {
+      this.setState({ isAgreeValid: true });
+      return 'agreed';
+    } else {
+      this.setState({ isAgreeValid: false });
+      return '';
+    }
+  };
+
+  handleSubmit = async (event: React.SyntheticEvent) => {
+    event.preventDefault();
 
     const formData = {
-      name: this.formControls.name.current?.value,
-      agree: this.formControls.agree.current?.value,
+      name: this.handleNameInput(),
+      agree: await this.handleAgreeInput(),
       birthday: this.formControls.birthday.current?.value,
-      avatar: images[0],
+      avatar: this.handleAvatarInput(),
       spam: this.formControls.spamYes.current?.value
         ? this.formControls.spamYes.current?.value
         : this.formControls.spamNo.current?.value,
       gender: this.formControls.gender?.current?.value,
     };
 
-    this.props.onFormSubmit(formData);
-    event.preventDefault();
-    (event.target as HTMLFormElement).reset();
-  }
+    if (
+      (await this.state.isAgreeValid) &&
+      (await this.state.isAvatarValid) &&
+      (await this.state.isNameValid)
+    ) {
+      this.props.onFormSubmit(formData);
+      (event.target as HTMLFormElement).reset();
+      this.setState({
+        isNameValid: false,
+        isAvatarValid: false,
+        isAgreeValid: false,
+        isValidationVisible: false,
+      });
+    } else {
+      this.setState({ isValidationVisible: true });
+    }
+  };
 
   render() {
     const genderOptions = genders.map((gen, i) => {
@@ -71,6 +129,15 @@ export class Form extends React.Component<Props> {
         <label>
           Username:
           <input type="text" ref={this.formControls.name} />
+          <p
+            className="validation"
+            style={{
+              visibility:
+                this.state.isValidationVisible && !this.state.isNameValid ? 'visible' : 'hidden',
+            }}
+          >
+            Name is required and should have length minimum 4 characters
+          </p>
         </label>
         <label>
           Date of birth:
@@ -107,10 +174,28 @@ export class Form extends React.Component<Props> {
         <label>
           Upload your avatar
           <input type="file" ref={this.formControls.avatar} />
+          <p
+            className="validation"
+            style={{
+              visibility:
+                this.state.isValidationVisible && !this.state.isAvatarValid ? 'visible' : 'hidden',
+            }}
+          >
+            Card looks ugly withot image, so choosing the image is required
+          </p>
         </label>
         <label>
           I never read tearms and conditions
           <input type="checkbox" ref={this.formControls.agree} />
+          <p
+            className="validation"
+            style={{
+              visibility:
+                this.state.isValidationVisible && !this.state.isAgreeValid ? 'visible' : 'hidden',
+            }}
+          >
+            This checkmark is required
+          </p>
         </label>
         <input type="submit" value="Submit" />
       </form>
