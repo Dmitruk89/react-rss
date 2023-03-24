@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  flex-direction: column;
+  color: var(--link);
+  gap: 20px;
+}
+
+.form input,
+.form select {
+  margin-left: 10px;
+}
+
+.form input[type='submit'] {
+  margin-left: 0;
+}
+
+.validation {
+  color: red;
+  margin: 5px 0;
+}
