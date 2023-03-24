@@ -174,16 +174,16 @@ export class Form extends React.Component<Props, State> {
         <label>
           Upload your avatar
           <input type="file" ref={this.formControls.avatar} />
-          <p
-            className="validation"
-            style={{
-              visibility:
-                this.state.isValidationVisible && !this.state.isAvatarValid ? 'visible' : 'hidden',
-            }}
-          >
-            Card looks ugly withot image, so choosing the image is required
-          </p>
         </label>
+        <p
+          className="validation"
+          style={{
+            visibility:
+              this.state.isValidationVisible && !this.state.isAvatarValid ? 'visible' : 'hidden',
+          }}
+        >
+          Card looks ugly withot image, so choosing the image is required
+        </p>
         <label>
           I never read tearms and conditions
           <input type="checkbox" ref={this.formControls.agree} />
