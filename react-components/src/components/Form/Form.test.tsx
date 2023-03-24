@@ -16,6 +16,14 @@ describe('FormComponent', () => {
     const usernameInput = screen.getByRole('textbox', { name: /username:/i });
     expect(usernameInput).toBeInTheDocument();
   });
+  it('radio group works correctly', async () => {
+    render(<Form onFormSubmit={handleFormSubmit} />);
+    const radioNoInput = screen.getByRole('radio', { name: /no way!/i });
+    const radioYesInput = screen.getByRole('radio', { name: /sure/i });
+    await user.click(radioNoInput);
+    expect(radioNoInput).toBeChecked();
+    expect(radioYesInput).not.toBeChecked();
+  });
   it('validate usernameInput on empty value correctly', async () => {
     render(<Form onFormSubmit={handleFormSubmit} />);
     await user.click(screen.getByRole('button', { name: /submit/i }));

@@ -92,7 +92,7 @@ export class Form extends React.Component<Props, State> {
       agree: await this.handleAgreeInput(),
       birthday: this.formControls.birthday.current?.value,
       avatar: this.handleAvatarInput(),
-      spam: this.formControls.spamYes.current?.value
+      spam: this.formControls.spamYes.current?.checked
         ? this.formControls.spamYes.current?.value
         : this.formControls.spamNo.current?.value,
       gender: this.formControls.gender?.current?.value,
