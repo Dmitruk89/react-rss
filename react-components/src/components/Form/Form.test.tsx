@@ -9,7 +9,7 @@ const handleFormSubmit = vi.fn();
 
 global.URL.createObjectURL = vi.fn();
 
-describe('FormCard', () => {
+describe('FormComponent', () => {
   const user = userEvent.setup();
   it('renders correctly', () => {
     render(<Form onFormSubmit={handleFormSubmit} />);

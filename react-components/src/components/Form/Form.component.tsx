@@ -4,7 +4,7 @@ import './Form.component.css';
 import { genders } from '../../mock/genders';
 
 interface Props {
-  onFormSubmit: (data: formData) => void;
+  onFormSubmit: (data: formData | null) => void;
 }
 
 interface State {
@@ -113,6 +113,7 @@ export class Form extends React.Component<Props, State> {
       });
     } else {
       this.setState({ isValidationVisible: true });
+      this.props.onFormSubmit(null);
     }
   };
 

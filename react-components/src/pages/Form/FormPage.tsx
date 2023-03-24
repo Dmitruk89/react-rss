@@ -1,9 +1,9 @@
-import { Form, formData } from '../components/Form/Form.component';
+import { Form, formData } from '../../components/Form/Form.component';
 import React from 'react';
-import { FormCard } from '../components/FormCardComponent/FormCard.component';
-import '../App.css';
-import { Toast } from '../components/Toast/Toast.component';
-import { Notification } from '../mock/notifications';
+import { FormCard } from '../../components/FormCardComponent/FormCard.component';
+import '../../App.css';
+import { Toast } from '../../components/Toast/Toast.component';
+import { Notification } from '../../mock/notifications';
 
 interface Props {
   children?: React.ReactNode;
@@ -27,10 +27,14 @@ export class FormPage extends React.Component<Props, State> {
 
   autoClose!: ReturnType<typeof setTimeout>;
 
-  handleFormSubmit(data: formData) {
-    this.setState({ cards: [...this.state.cards, data] });
-    this.showToast('success');
-  }
+  handleFormSubmit = (data: formData | null) => {
+    if (data) {
+      this.setState({ cards: [...this.state.cards, data] });
+      this.showToast('success');
+    } else {
+      this.showToast('error');
+    }
+  };
 
   showToast(type: string) {
     const id = Math.floor(Math.random() * 100 + 1);
@@ -44,16 +48,14 @@ export class FormPage extends React.Component<Props, State> {
           backgroundColor: 'rgb(0 225 0)',
         };
         break;
-      case 'danger':
+      case 'error':
         toastProperties = {
           id,
-          title: 'Danger',
-          description: 'This is an error toast component',
+          title: 'Error',
+          description: 'Form was not submitted',
           backgroundColor: '#d9534f',
         };
         break;
-      default:
-        this.setState({ toastList: [] });
     }
     this.setState({ toastList: [...this.state.toastList, toastProperties] });
     this.autoClose = setTimeout(() => this.closeToast(id), 3000);
@@ -68,7 +70,7 @@ export class FormPage extends React.Component<Props, State> {
     return (
       <div>
         <h1>Form page</h1>
-        <Form onFormSubmit={this.handleFormSubmit.bind(this)} />
+        <Form onFormSubmit={this.handleFormSubmit} />
         <div className="card_container">
           {this.state.cards.map((data, i) => {
             return <FormCard key={i} formData={data} />;

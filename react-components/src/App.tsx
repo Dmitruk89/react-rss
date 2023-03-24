@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import { About } from './pages/About';
-import { FormPage } from './pages/FormPage';
+import { FormPage } from './pages/Form/FormPage';
 
 export function App() {
   return (
