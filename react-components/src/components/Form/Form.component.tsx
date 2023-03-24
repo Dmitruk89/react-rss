@@ -95,7 +95,7 @@ export class Form extends React.Component<Props, State> {
       spam: this.formControls.spamYes.current?.checked
         ? this.formControls.spamYes.current?.value
         : this.formControls.spamNo.current?.value,
-      gender: this.formControls.gender?.current?.value,
+      gender: this.gender?.current?.value,
     };
 
     if (
