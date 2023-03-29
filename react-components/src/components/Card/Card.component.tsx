@@ -14,21 +14,16 @@ type cardProps = {
   content: ProductProps;
 };
 
-export class Card extends React.Component<cardProps> {
-  constructor(props: cardProps) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className="product_card">
-        <img src={this.props.content.img} alt="product-image" />
-        <p className="product_name">{this.props.content.name}</p>
-        <p>{this.props.content.description}</p>
-        <p className="product_price price">{this.props.content.price}.00 €</p>
-        <div className="add_to_cart_button">
-          <MdAddShoppingCart />
-        </div>
+export function Card(props: cardProps) {
+  return (
+    <div className="product_card">
+      <img src={props.content.img} alt="product-image" />
+      <p className="product_name">{props.content.name}</p>
+      <p>{props.content.description}</p>
+      <p className="product_price price">{props.content.price}.00 €</p>
+      <div className="add_to_cart_button">
+        <MdAddShoppingCart />
       </div>
-    );
-  }
+    </div>
+  );
 }
