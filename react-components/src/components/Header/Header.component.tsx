@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { Paths } from '../../mock/paths';
 
 import './Header.component.css';
 
@@ -8,7 +9,11 @@ export function Header() {
   const location = useLocation();
 
   function getPageName(location: string) {
-    return location.slice(1);
+    if (Object.values(Paths).includes(location)) {
+      return location.slice(1);
+    } else {
+      return '';
+    }
   }
 
   return (
