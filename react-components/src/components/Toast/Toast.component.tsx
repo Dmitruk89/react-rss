@@ -7,24 +7,22 @@ interface Props {
   list: Notification[];
   onCloseToast: (id: number) => void;
 }
-export class Toast extends React.Component<Props> {
-  render() {
-    return (
-      <div className={`notification-container ${this.props.position}`}>
-        {this.props.list.map((toast, i) => (
-          <div
-            key={i}
-            onClick={() => toast.id && this.props.onCloseToast(toast.id)}
-            className={`notification toast ${this.props.position}`}
-            style={{ borderLeft: 'solid ' + '8px ' + toast.backgroundColor }}
-          >
-            <div>
-              <p className="notification-title">{toast.title}</p>
-              <p className="notification-message">{toast.description}</p>
-            </div>
+export const Toast = (props: Props) => {
+  return (
+    <div className={`notification-container ${props.position}`}>
+      {props.list.map((toast, i) => (
+        <div
+          key={i}
+          onClick={() => toast.id && props.onCloseToast(toast.id)}
+          className={`notification toast ${props.position}`}
+          style={{ borderLeft: 'solid ' + '8px ' + toast.backgroundColor }}
+        >
+          <div>
+            <p className="notification-title">{toast.title}</p>
+            <p className="notification-message">{toast.description}</p>
           </div>
-        ))}
-      </div>
-    );
-  }
-}
+        </div>
+      ))}
+    </div>
+  );
+};
