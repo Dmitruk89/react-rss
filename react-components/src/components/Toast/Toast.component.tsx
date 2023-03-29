@@ -7,7 +7,7 @@ interface Props {
   list: Notification[];
   onCloseToast: (id: number) => void;
 }
-export const Toast = (props: Props) => {
+export function Toast(props: Props) {
   return (
     <div className={`notification-container ${props.position}`}>
       {props.list.map((toast, i) => (
@@ -25,4 +25,4 @@ export const Toast = (props: Props) => {
       ))}
     </div>
   );
-};
+}
