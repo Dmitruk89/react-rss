@@ -13,7 +13,7 @@ export function FormCard(props: FormCardProps) {
       <h3>{props.formData?.name}</h3>
       <p>was born: {props.formData?.birthday}</p>
       <p>gender: {props.formData?.gender}</p>
-      <img src={props.formData?.avatar?.valueOf()} alt="avatar" />
+      <img src={props.formData?.avatarUrl?.valueOf()} alt="avatar" />
       <p>agree to get spam: {props.formData?.spam}</p>
       <p>terms and conditions checked: {props.formData?.agree}</p>
     </div>
