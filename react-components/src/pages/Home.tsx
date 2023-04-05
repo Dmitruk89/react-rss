@@ -2,9 +2,11 @@ import { queryData, SearchBar } from '../components/Searchbar/Searchbar.componen
 import React, { useEffect, useState } from 'react';
 
 import { CardLIst } from '../components/CardList/CardList.component';
+import { Modal } from '../components/Modal/Modal.component';
 
 export function Home() {
   const [characters, setCharachters] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getCards = (url: string) => {
     fetch(url)
@@ -27,7 +29,8 @@ export function Home() {
   return (
     <div>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
-      {characters && <CardLIst data={characters} />}
+      {characters && <CardLIst data={characters} onCardClick={() => setIsModalOpen(true)} />}
+      {isModalOpen && <Modal setIsOpen={setIsModalOpen} />}
     </div>
   );
 }

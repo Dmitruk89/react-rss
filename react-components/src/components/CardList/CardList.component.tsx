@@ -5,11 +5,16 @@ import './CardList.component.css';
 
 type Props = {
   data: Character[];
+  onCardClick: () => void;
 };
 
 export function CardLIst(props: Props) {
   const characters = props.data.map((product, i) => {
-    return <Card key={i} content={product} />;
+    return (
+      <div key={i} onClick={props.onCardClick}>
+        <Card key={i} content={product} />;
+      </div>
+    );
   });
   return <ul className="card__container">{characters}</ul>;
 }
