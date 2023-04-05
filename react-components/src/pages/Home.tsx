@@ -1,19 +1,20 @@
 import { SearchBar } from '../components/Searchbar/Searchbar.component';
-import React from 'react';
-import { Card } from '../components/Card/Card.component';
-import { products } from '../mock/products';
-import './Home.css';
+import React, { useEffect, useState } from 'react';
 
-function Home() {
-  const productList = products.map((product, i) => {
-    return <Card key={i} content={product} />;
+import { CardLIst } from '../components/CardList/CardList.component';
+
+export function Home() {
+  const [characters, setCharachters] = useState(null);
+
+  useEffect(() => {
+    fetch('https://rickandmortyapi.com/api/character')
+      .then((response) => response.json())
+      .then((data) => setCharachters(data.results));
   });
   return (
     <div>
       <SearchBar />
-      <ul className="product_card_container">{productList}</ul>
+      {characters && <CardLIst data={characters} />}
     </div>
   );
 }
-
-export default Home;

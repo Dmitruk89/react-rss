@@ -1,4 +1,4 @@
-.product_card_container {
+.card__container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
