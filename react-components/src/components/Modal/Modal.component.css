@@ -3,10 +3,9 @@
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
+  top: 0;
+  left: 0;
+  position: fixed;
 }
 
 .centered {
@@ -35,9 +34,9 @@
 
 .modalContent {
   padding: 10px;
+  max-width: 300px;
   font-size: 14px;
   color: #2c3e50;
-  text-align: center;
 }
 
 .closeBtn {
@@ -46,17 +45,22 @@
   padding: 4px 8px;
   border-radius: 8px;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   color: #2c3e50;
   background: white;
   transition: all 0.25s ease;
   position: absolute;
   right: 0;
   top: 0;
+  text-align: center;
   align-self: flex-end;
 }
 
-.closeBtn:hover {
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
-  transform: scale(0.8);
+.modalContent img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.modalContent__category {
+  font-weight: bold;
 }
