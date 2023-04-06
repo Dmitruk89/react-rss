@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import { Character } from 'types/character';
 import { Card } from '../Card/Card.component';
 import './CardList.component.css';

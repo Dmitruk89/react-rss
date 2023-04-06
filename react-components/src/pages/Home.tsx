@@ -19,6 +19,7 @@ export function Home() {
 
   const apiGet = (url: string) => {
     setError(null);
+    setCharachter(null);
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -52,8 +53,6 @@ export function Home() {
   };
 
   const onCardClick = (id: number) => {
-    console.log(id);
-
     apiGet(`https://rickandmortyapi.com/api/character/${id}`);
     setIsCharacterPending(true);
   };
@@ -72,7 +71,6 @@ export function Home() {
         <CardLIst data={characters} onCardClick={onCardClick} />
       )}
       {(isCharacterPending || isCharactersPending) && <LoadingSpinner />}
-
       {!isCharacterPending && character && isModalOpen && (
         <Modal setIsOpen={setIsModalOpen} content={character} />
       )}
