@@ -8,6 +8,9 @@ import LoadingSpinner from '../components/Spinner/Spinner.component';
 export function Home() {
   const [characters, setCharachters] = useState(null);
   const [character, setCharachter] = useState(null);
+  const [error, setError] = useState<string | null>(
+    'Search by name of the character. e. g. "Rick" or "Morty". The letters the name begins or empty query are also the valid values.'
+  );
   const [isCharacterPending, setIsCharacterPending] = useState(false);
   const [isCharactersPending, setIsCharactersPending] = useState(false);
   const [isRequestSuccessful, setIsRequestSuccessful] = useState(false);
@@ -15,12 +18,13 @@ export function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const apiGet = (url: string) => {
+    setError(null);
     fetch(url)
       .then((response) => {
-        if (response.status === 200) {
+        if (response.ok) {
           setIsRequestSuccessful(true);
+          return response.json();
         }
-        return response.json();
       })
       .then((data) => {
         if (data.results) {
@@ -31,6 +35,10 @@ export function Home() {
           setIsCharacterPending(false);
         }
         setIsRequestSuccessful(false);
+      })
+      .catch(() => {
+        setError('No characters begins with your query!');
+        setIsCharactersPending(false);
       });
   };
 
@@ -51,11 +59,6 @@ export function Home() {
   };
 
   useEffect(() => {
-    apiGet('https://rickandmortyapi.com/api/character');
-    setIsCharactersPending(true);
-  }, []);
-
-  useEffect(() => {
     if (isRequestSuccessful) {
       setIsModalOpen(true);
     }
@@ -64,10 +67,12 @@ export function Home() {
   return (
     <div>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
-      {!isCharactersPending && characters && (
+      {error && <div className="error__message">{error}</div>}
+      {!error && !isCharactersPending && characters && (
         <CardLIst data={characters} onCardClick={onCardClick} />
       )}
       {(isCharacterPending || isCharactersPending) && <LoadingSpinner />}
+
       {!isCharacterPending && character && isModalOpen && (
         <Modal setIsOpen={setIsModalOpen} content={character} />
       )}
