@@ -3,17 +3,18 @@ import React, { useEffect, useState } from 'react';
 
 import { CardLIst } from '../components/CardList/CardList.component';
 import { Modal } from '../components/Modal/Modal.component';
+import LoadingSpinner from '../components/Spinner/Spinner.component';
 
 export function Home() {
   const [characters, setCharachters] = useState(null);
   const [character, setCharachter] = useState(null);
-  const [isRequestPending, setIsRequestPending] = useState(false);
+  const [isCharacterPending, setIsCharacterPending] = useState(false);
+  const [isCharactersPending, setIsCharactersPending] = useState(false);
   const [isRequestSuccessful, setIsRequestSuccessful] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const getCharacter = (url: string) => {
-    setIsRequestPending(true);
+  const apiGet = (url: string) => {
     fetch(url)
       .then((response) => {
         if (response.status === 200) {
@@ -22,21 +23,21 @@ export function Home() {
         return response.json();
       })
       .then((data) => {
-        setCharachter(data);
-        setIsRequestPending(false);
+        if (data.results) {
+          setCharachters(data.results);
+          setIsCharactersPending(false);
+        } else {
+          setCharachter(data);
+          setIsCharacterPending(false);
+        }
         setIsRequestSuccessful(false);
       });
   };
 
-  const getCharacters = (url: string) => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setCharachters(data.results));
-  };
-
   const handleSearchSubmit = (data: queryData | null) => {
     if (data) {
-      getCharacters(`https://rickandmortyapi.com/api/character/?name=${data.name}`);
+      apiGet(`https://rickandmortyapi.com/api/character/?name=${data.name}`);
+      setIsCharactersPending(true);
     } else {
       console.log('no such character!');
     }
@@ -45,11 +46,13 @@ export function Home() {
   const onCardClick = (id: number) => {
     console.log(id);
 
-    getCharacter(`https://rickandmortyapi.com/api/character/${id}`);
+    apiGet(`https://rickandmortyapi.com/api/character/${id}`);
+    setIsCharacterPending(true);
   };
 
   useEffect(() => {
-    getCharacters('https://rickandmortyapi.com/api/character');
+    apiGet('https://rickandmortyapi.com/api/character');
+    setIsCharactersPending(true);
   }, []);
 
   useEffect(() => {
@@ -61,8 +64,11 @@ export function Home() {
   return (
     <div>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
-      {characters && <CardLIst data={characters} onCardClick={onCardClick} />}
-      {!isRequestPending && character && isModalOpen && (
+      {!isCharactersPending && characters && (
+        <CardLIst data={characters} onCardClick={onCardClick} />
+      )}
+      {(isCharacterPending || isCharactersPending) && <LoadingSpinner />}
+      {!isCharacterPending && character && isModalOpen && (
         <Modal setIsOpen={setIsModalOpen} content={character} />
       )}
     </div>
