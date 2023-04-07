@@ -13,9 +13,13 @@ export const Modal = ({ setIsOpen, content }: Props) => {
     <>
       <div className="darkBG" onClick={() => setIsOpen(false)} />
       <div className="centered">
-        <div className="modal">
+        <div className="modal" data-testid="modal-element">
           <h5 className="heading">{content.name}</h5>
-          <button className="closeBtn" onClick={() => setIsOpen(false)}>
+          <button
+            className="closeBtn"
+            data-testid="modal-close-btn"
+            onClick={() => setIsOpen(false)}
+          >
             <RiCloseLine />
           </button>
           <div className="modalContent">
