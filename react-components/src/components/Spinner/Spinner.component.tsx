@@ -1,9 +1,9 @@
 import React from 'react';
 import './Spinner.component.css';
 
-export default function LoadingSpinner() {
+export function LoadingSpinner() {
   return (
-    <div className="spinner-container">
+    <div className="spinner-container" data-testid="spinner-element">
       <div className="loading-spinner"></div>
     </div>
   );

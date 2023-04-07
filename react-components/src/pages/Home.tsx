@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { CardList } from '../components/CardList/CardList.component';
 import { Modal } from '../components/Modal/Modal.component';
-import LoadingSpinner from '../components/Spinner/Spinner.component';
+import { LoadingSpinner } from '../components/Spinner/Spinner.component';
 
 export function Home() {
   const [characters, setCharachters] = useState(null);
