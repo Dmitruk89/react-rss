@@ -1,7 +1,7 @@
 import { queryData, SearchBar } from '../components/Searchbar/Searchbar.component';
 import React, { useEffect, useState } from 'react';
 
-import { CardLIst } from '../components/CardList/CardList.component';
+import { CardList } from '../components/CardList/CardList.component';
 import { Modal } from '../components/Modal/Modal.component';
 import LoadingSpinner from '../components/Spinner/Spinner.component';
 
@@ -68,7 +68,7 @@ export function Home() {
       <SearchBar onSearchSubmit={handleSearchSubmit} />
       {error && <div className="error__message">{error}</div>}
       {!error && !isCharactersPending && characters && (
-        <CardLIst data={characters} onCardClick={onCardClick} />
+        <CardList data={characters} onCardClick={onCardClick} />
       )}
       {(isCharacterPending || isCharactersPending) && <LoadingSpinner />}
       {!isCharacterPending && character && isModalOpen && (

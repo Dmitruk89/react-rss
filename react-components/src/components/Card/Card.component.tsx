@@ -13,7 +13,7 @@ export function Card(props: cardProps) {
     props.onCardClick(props.content.id);
   };
   return (
-    <div className="product_card" onClick={onCardClick}>
+    <div className="product_card" data-testid="card-element" onClick={onCardClick}>
       <img src={props.content.image} alt="product-image" />
       <p className="product_name">{props.content.name}</p>
     </div>

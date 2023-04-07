@@ -8,9 +8,13 @@ type Props = {
   onCardClick: (id: number) => void;
 };
 
-export function CardLIst(props: Props) {
-  const characters = props.data.map((character) => {
-    return <Card key={character.id} content={character} onCardClick={props.onCardClick} />;
-  });
-  return <ul className="card__container">{characters}</ul>;
+export function CardList(props: Props) {
+  const characters = props.data.map((character) => (
+    <Card key={character.id} content={character} onCardClick={props.onCardClick} />
+  ));
+  return (
+    <ul data-testid="card-list-element" className="card__container">
+      {characters}
+    </ul>
+  );
 }
