@@ -35,7 +35,7 @@ export function SearchBar(props: Props) {
           placeholder="search"
           onInput={hadleChange}
         ></input>
-        <button type="submit">
+        <button type="submit" data-testid="search-button-element">
           <BsSearch />
         </button>
       </form>
