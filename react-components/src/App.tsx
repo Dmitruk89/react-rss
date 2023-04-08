@@ -2,7 +2,7 @@ import './App.css';
 import { Header } from './components/Header/Header.component';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Home } from './pages/Home';
+import { Home } from './pages/Home/Home';
 import NotFound from './pages/NotFound';
 import { About } from './pages/About';
 import { FormPage } from './pages/Form/FormPage';

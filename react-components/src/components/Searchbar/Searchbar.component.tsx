@@ -26,7 +26,7 @@ export function SearchBar(props: Props) {
   };
 
   return (
-    <div className="container">
+    <div className="container" data-testid="search-bar-element">
       <form className="search-bar" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register('name')}

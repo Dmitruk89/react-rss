@@ -1,9 +1,9 @@
-import { queryData, SearchBar } from '../components/Searchbar/Searchbar.component';
+import { queryData, SearchBar } from '../../components/Searchbar/Searchbar.component';
 import React, { useEffect, useState } from 'react';
 
-import { CardList } from '../components/CardList/CardList.component';
-import { Modal } from '../components/Modal/Modal.component';
-import { LoadingSpinner } from '../components/Spinner/Spinner.component';
+import { CardList } from '../../components/CardList/CardList.component';
+import { Modal } from '../../components/Modal/Modal.component';
+import { LoadingSpinner } from '../../components/Spinner/Spinner.component';
 
 export function Home() {
   const [characters, setCharachters] = useState(null);
@@ -22,7 +22,7 @@ export function Home() {
     setCharachter(null);
     fetch(url)
       .then((response) => {
-        if (response.ok) {
+        if (response.status === 200) {
           setIsRequestSuccessful(true);
           return response.json();
         }
@@ -47,8 +47,6 @@ export function Home() {
     if (data) {
       apiGet(`https://rickandmortyapi.com/api/character/?name=${data.name}`);
       setIsCharactersPending(true);
-    } else {
-      console.log('no such character!');
     }
   };
 
@@ -66,7 +64,11 @@ export function Home() {
   return (
     <div>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
-      {error && <div className="error__message">{error}</div>}
+      {error && (
+        <div className="error__message" data-testid="request-error-element">
+          {error}
+        </div>
+      )}
       {!error && !isCharactersPending && characters && (
         <CardList data={characters} onCardClick={onCardClick} />
       )}
