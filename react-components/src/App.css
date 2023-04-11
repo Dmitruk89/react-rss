@@ -79,9 +79,14 @@ button {
   font-size: calc(10px + 2vmin);
 }
 
-.error__message {
+.error__message,
+.notion__message {
   color: var(--link-active);
   max-width: 400px;
   text-align: center;
   margin: 20px auto;
+}
+
+.notion__message {
+  color: var(--link);
 }

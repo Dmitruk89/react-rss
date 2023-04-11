@@ -8,9 +8,7 @@ import { LoadingSpinner } from '../../components/Spinner/Spinner.component';
 export function Home() {
   const [characters, setCharachters] = useState(null);
   const [character, setCharachter] = useState(null);
-  const [error, setError] = useState<string | null>(
-    'Search by name of the character. e. g. "Rick" or "Morty". The letters the name begins or empty query are also the valid values.'
-  );
+  const [error, setError] = useState<string | null>();
   const [isCharacterPending, setIsCharacterPending] = useState(false);
   const [isCharactersPending, setIsCharactersPending] = useState(false);
   const [isRequestSuccessful, setIsRequestSuccessful] = useState(false);
@@ -61,8 +59,17 @@ export function Home() {
     }
   }, [isRequestSuccessful]);
 
+  useEffect(() => {
+    const value = localStorage.getItem('inputValue') || '';
+    apiGet(`https://rickandmortyapi.com/api/character/?name=${value}`);
+  }, []);
+
   return (
     <div>
+      <div className="notion__message">
+        Search by name of the character. e. g. Rick or Morty. The letters the name begins or empty
+        query are also the valid values.
+      </div>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
       {error && (
         <div className="error__message" data-testid="request-error-element">

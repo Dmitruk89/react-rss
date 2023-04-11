@@ -32,7 +32,7 @@ export function SearchBar(props: Props) {
           {...register('name')}
           type="text"
           value={query}
-          placeholder="search"
+          placeholder="your query.."
           onInput={hadleChange}
         ></input>
         <button type="submit" data-testid="search-button-element">
