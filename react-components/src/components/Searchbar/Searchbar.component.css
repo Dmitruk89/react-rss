@@ -22,6 +22,10 @@
   color: var(--link);
 }
 
+.search-bar input::placeholder {
+  color: var(--link-active);
+}
+
 .search-bar button {
   background: transparent;
   border: 0;

@@ -1,29 +1,21 @@
 import React from 'react';
 import './Card.component.css';
-import { MdAddShoppingCart } from 'react-icons/md';
-
-type ProductProps = {
-  img: string;
-  name: string;
-  description: string;
-  price: number;
-};
+import { Character } from 'types/character';
 
 type cardProps = {
   key: number;
-  content: ProductProps;
+  content: Character;
+  onCardClick: (id: number) => void;
 };
 
 export function Card(props: cardProps) {
+  const onCardClick = () => {
+    props.onCardClick(props.content.id);
+  };
   return (
-    <div className="product_card">
-      <img src={props.content.img} alt="product-image" />
+    <div className="product_card" data-testid="card-element" onClick={onCardClick}>
+      <img src={props.content.image} alt="product-image" />
       <p className="product_name">{props.content.name}</p>
-      <p>{props.content.description}</p>
-      <p className="product_price price">{props.content.price}.00 €</p>
-      <div className="add_to_cart_button">
-        <MdAddShoppingCart />
-      </div>
     </div>
   );
 }
