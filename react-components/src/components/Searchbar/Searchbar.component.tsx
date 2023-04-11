@@ -2,6 +2,9 @@ import React, { ChangeEvent, useState } from 'react';
 import './Searchbar.component.css';
 import { BsSearch } from 'react-icons/bs';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { save } from '../../features/search/searchSlice';
 
 interface Props {
   onSearchSubmit: (data: queryData | null) => void;
@@ -12,13 +15,14 @@ export interface queryData {
 }
 
 export function SearchBar(props: Props) {
+  const queryValue = useSelector((state: RootState) => state.search.value);
+  const dispatch = useDispatch();
+
   const { onSearchSubmit } = props;
-  const [query, setQuery] = useState(localStorage.getItem('inputValue') || '');
   const { register, handleSubmit } = useForm<queryData>();
 
   const hadleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
-    localStorage.setItem('inputValue', event.target.value);
+    dispatch(save(event.target.value));
   };
 
   const onSubmit: SubmitHandler<queryData> = (formData) => {
@@ -31,7 +35,7 @@ export function SearchBar(props: Props) {
         <input
           {...register('name')}
           type="text"
-          value={query}
+          value={queryValue}
           placeholder="your query.."
           onInput={hadleChange}
         ></input>

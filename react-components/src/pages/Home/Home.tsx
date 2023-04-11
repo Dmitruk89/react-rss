@@ -4,8 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { CardList } from '../../components/CardList/CardList.component';
 import { Modal } from '../../components/Modal/Modal.component';
 import { LoadingSpinner } from '../../components/Spinner/Spinner.component';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
 
 export function Home() {
+  const queryValue = useSelector((state: RootState) => state.search.value);
   const [characters, setCharachters] = useState(null);
   const [character, setCharachter] = useState(null);
   const [error, setError] = useState<string | null>();
@@ -60,8 +63,7 @@ export function Home() {
   }, [isRequestSuccessful]);
 
   useEffect(() => {
-    const value = localStorage.getItem('inputValue') || '';
-    apiGet(`https://rickandmortyapi.com/api/character/?name=${value}`);
+    apiGet(`https://rickandmortyapi.com/api/character/?name=${queryValue}`);
   }, []);
 
   return (
