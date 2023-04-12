@@ -1,39 +1,16 @@
 import { SearchBar } from '../../components/Searchbar/Searchbar.component';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { CardList } from '../../components/CardList/CardList.component';
 import { Modal } from '../../components/Modal/Modal.component';
 import { LoadingSpinner } from '../../components/Spinner/Spinner.component';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
-import { useGetCharactersQuery, useGetCharacterQuery } from '../../features/api/apiSlice';
+import { useGetCharactersQuery } from '../../features/api/apiSlice';
 
 export function Home() {
   const queryValue = useSelector((state: RootState) => state.search.queryValue);
-  const [character, setCharachter] = useState(null);
-  const [isCharacterPending, setIsCharacterPending] = useState(false);
-  const [isRequestSuccessful, setIsRequestSuccessful] = useState(false);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const apiGet = (url: string) => {
-    setCharachter(null);
-    fetch(url)
-      .then((response) => {
-        if (response.status === 200) {
-          setIsRequestSuccessful(true);
-          return response.json();
-        }
-      })
-      .then((data) => {
-        if (data.results) {
-        } else {
-          setCharachter(data);
-          setIsCharacterPending(false);
-        }
-        setIsRequestSuccessful(false);
-      });
-  };
+  const isModalOpen = useSelector((state: RootState) => state.characters.isModalOpen);
 
   const {
     data: reduxCharacters,
@@ -43,25 +20,14 @@ export function Home() {
     error,
   } = useGetCharactersQuery({ name: queryValue });
 
-  const onCardClick = (id: number) => {
-    apiGet(`https://rickandmortyapi.com/api/character/${id}`);
-    setIsCharacterPending(true);
-  };
-
-  useEffect(() => {
-    if (isRequestSuccessful) {
-      setIsModalOpen(true);
-    }
-  }, [isRequestSuccessful]);
-
-  let content;
+  let CharacterListcontent;
 
   if (isLoading) {
-    content = <LoadingSpinner />;
+    CharacterListcontent = <LoadingSpinner />;
   } else if (isSuccess) {
-    content = <CardList data={reduxCharacters.results} onCardClick={onCardClick} />;
+    CharacterListcontent = <CardList data={reduxCharacters.results} />;
   } else if (isError) {
-    content = (
+    CharacterListcontent = (
       <div className="error__message" data-testid="request-error-element">
         No characters begins with your query!
       </div>
@@ -75,10 +41,8 @@ export function Home() {
         query are also the valid values.
       </div>
       <SearchBar />
-      {content}
-      {!isCharacterPending && character && isModalOpen && (
-        <Modal setIsOpen={setIsModalOpen} content={character} />
-      )}
+      {CharacterListcontent}
+      {isModalOpen && <Modal />}
     </div>
   );
 }

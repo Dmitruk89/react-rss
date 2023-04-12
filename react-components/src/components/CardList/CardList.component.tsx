@@ -5,13 +5,10 @@ import './CardList.component.css';
 
 type Props = {
   data: Character[];
-  onCardClick: (id: number) => void;
 };
 
 export function CardList(props: Props) {
-  const characters = props.data.map((character) => (
-    <Card key={character.id} content={character} onCardClick={props.onCardClick} />
-  ));
+  const characters = props.data.map((character) => <Card key={character.id} content={character} />);
   return (
     <ul data-testid="card-list-element" className="card__container">
       {characters}
