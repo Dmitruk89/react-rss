@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent } from 'react';
 import './Searchbar.component.css';
 import { BsSearch } from 'react-icons/bs';
 import { useForm, SubmitHandler } from 'react-hook-form';
