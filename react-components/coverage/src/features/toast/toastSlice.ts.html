@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/Toast/Toast.component.tsx</title>
+    <title>Code coverage report for src/features/toast/toastSlice.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/components/Toast</a> Toast.component.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/features/toast</a> toastSlice.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.09% </span>
+                <span class="strong">56.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/41</span>
+                <span class='fraction'>26/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.09% </span>
+                <span class="strong">56.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/41</span>
+                <span class='fraction'>26/46</span>
             </div>
         
             
@@ -104,7 +104,12 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -115,77 +120,87 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import './Toast.component.css';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Notification } from '../../mock/notifications';
-import { useDispatch } from 'react-redux';
 &nbsp;
-import { closeToast } from '../../features/toast/toastSlice';
-interface Props {
-  position: string;
-  list: Notification[];
+export interface ToastState {
+  toastList: Notification[];
+  autoClose: ReturnType&lt;typeof setTimeout&gt; | null;
 }
-export function Toast(props: Props) {
-  const dispatch = useDispatch();
-  let autoClose!: ReturnType&lt;typeof setTimeout&gt;;
 &nbsp;
-  const onToastClose = <span class="fstat-no" title="function not covered" >(id: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    dispatch(closeToast(id));</span>
-<span class="cstat-no" title="statement not covered" >    clearInterval(autoClose);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+const initialState: ToastState = {
+  toastList: [],
+  autoClose: null,
+};
 &nbsp;
-  return (
-    &lt;div className={`notification-container ${props.position}`}&gt;
-      {props.list.map((toast, i) =&gt; {
-<span class="cstat-no" title="statement not covered" >        autoClose = setTimeout(() =&gt; toast.id &amp;&amp; dispatch(closeToast(toast.id)), 3000);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            key={i}</span>
-<span class="cstat-no" title="statement not covered" >            onClick={() =&gt; toast.id &amp;&amp; onToastClose(toast.id)}</span>
-<span class="cstat-no" title="statement not covered" >            className={`notification toast ${props.position}`}</span>
-<span class="cstat-no" title="statement not covered" >            style={{ borderLeft: 'solid ' + '8px ' + toast.backgroundColor }}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;p className="notification-title"&gt;{toast.title}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;p className="notification-message"&gt;{toast.description}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
-      })}
-    &lt;/div&gt;
-  );
-}
+export const toastSlice = createSlice({
+  name: 'toast',
+  initialState,
+  reducers: {
+    showSuccess: <span class="fstat-no" title="function not covered" >(state) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const id = Math.floor(Math.random() * 100 + 1);</span>
+<span class="cstat-no" title="statement not covered" >      const toastProperties = {</span>
+<span class="cstat-no" title="statement not covered" >        id,</span>
+<span class="cstat-no" title="statement not covered" >        title: 'Success',</span>
+<span class="cstat-no" title="statement not covered" >        description: 'Form was successfully submitted',</span>
+<span class="cstat-no" title="statement not covered" >        backgroundColor: 'rgb(0 225 0)',</span>
+<span class="cstat-no" title="statement not covered" >      };</span>
+<span class="cstat-no" title="statement not covered" >      state.toastList.push(toastProperties);</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+    showError: <span class="fstat-no" title="function not covered" >(state) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      const id = Math.floor(Math.random() * 100 + 1);</span>
+<span class="cstat-no" title="statement not covered" >      const toastProperties = {</span>
+<span class="cstat-no" title="statement not covered" >        id,</span>
+<span class="cstat-no" title="statement not covered" >        title: 'Error',</span>
+<span class="cstat-no" title="statement not covered" >        description: 'Form was not submitted',</span>
+<span class="cstat-no" title="statement not covered" >        backgroundColor: '#d9534f',</span>
+<span class="cstat-no" title="statement not covered" >      };</span>
+<span class="cstat-no" title="statement not covered" >      state.toastList.push(toastProperties);</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+    closeToast: <span class="fstat-no" title="function not covered" >(state, action: PayloadAction&lt;number&gt;) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      state.toastList = state.toastList.filter((i) =&gt; i.id !== action.payload);</span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+  },
+}<span class="fstat-no" title="function not covered" >);</span>
+&nbsp;
+export const { showSuccess, showError, closeToast } = toastSlice.<span class="fstat-no" title="function not covered" >actions;</span>
+&nbsp;
+export default toastSlice.reducer;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
