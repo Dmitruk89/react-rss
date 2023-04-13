@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import type { AppStore, RootState } from '../store';
 // As a basic setup, import your same slice reducers
 import searchReducer from '../features/search/searchSlice';
+import charactersReducer from '../features/characters/charactersSlice';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>;
@@ -19,7 +20,7 @@ export function renderWithProviders(
     preloadedState = {},
     // Automatically create a store instance if no store was passed in
     store = configureStore({
-      reducer: { search: searchReducer },
+      reducer: { search: searchReducer, characters: charactersReducer },
       preloadedState,
     }),
     ...renderOptions

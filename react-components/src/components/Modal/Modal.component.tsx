@@ -15,7 +15,6 @@ export const Modal = () => {
     isLoading,
     isSuccess,
     isError,
-    error,
   } = useGetCharacterQuery({ id: characterId });
 
   let modalContent;
@@ -24,7 +23,7 @@ export const Modal = () => {
     modalContent = <LoadingSpinner />;
   } else if (isSuccess) {
     modalContent = (
-      <div className="modal" data-testid="modal-element">
+      <>
         <h5 className="heading">{reduxCharacter.name}</h5>
         <button
           className="closeBtn"
@@ -52,7 +51,7 @@ export const Modal = () => {
             <span>{reduxCharacter.species}</span>
           </div>
         </div>
-      </div>
+      </>
     );
   } else if (isError) {
     modalContent = (
@@ -65,7 +64,11 @@ export const Modal = () => {
   return (
     <>
       <div className="darkBG" onClick={() => dispatch(toggleModal(false))} />
-      <div className="centered">{modalContent}</div>
+      <div className="centered">
+        <div className="modal" data-testid="modal-element">
+          {modalContent}
+        </div>
+      </div>
     </>
   );
 };
