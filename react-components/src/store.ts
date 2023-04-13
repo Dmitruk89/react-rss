@@ -1,20 +1,29 @@
 import { combineReducers, configureStore, PreloadedState } from '@reduxjs/toolkit';
 import searchReducer from './features/search/searchSlice';
 import charactersReducer from './features/characters/charactersSlice';
+import formReducer from './features/form/formSlice';
+import toastReducer from './features/toast/toastSlice';
 import { apiSlice } from './features/api/apiSlice';
 // Create the root reducer independently to obtain the RootState type
 const rootReducer = combineReducers({
   search: searchReducer,
   characters: charactersReducer,
+  form: formReducer,
+  toast: toastReducer,
 });
 
 export const store = configureStore({
   reducer: {
     search: searchReducer,
     characters: charactersReducer,
+    form: formReducer,
+    toast: toastReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(apiSlice.middleware),
 });
 
 export function setupStore(preloadedState?: PreloadedState<RootState>) {
