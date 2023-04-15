@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import React from 'react';
 import { Toast } from './Toast.component';
+import { renderWithProviders } from '../../utils/redux-render';
 
 const toastList = [
   {
@@ -13,13 +14,9 @@ const toastList = [
   },
 ];
 
-const closeToast = () => {
-  return;
-};
-
 describe('Toast', () => {
   it('renders correctly', () => {
-    render(<Toast list={toastList} onCloseToast={closeToast} position="top-left" />);
+    renderWithProviders(<Toast list={toastList} position="top-left" />);
     const title = screen.getByText('Success');
     expect(title).toBeInTheDocument();
   });
