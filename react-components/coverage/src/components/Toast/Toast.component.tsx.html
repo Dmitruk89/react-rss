@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.09% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/41</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.09% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/41</span>
+                <span class='fraction'>41/41</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -115,36 +115,36 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import './Toast.component.css';
 import { Notification } from '../../mock/notifications';
@@ -159,29 +159,29 @@ export function Toast(props: Props) {
   const dispatch = useDispatch();
   let autoClose!: ReturnType&lt;typeof setTimeout&gt;;
 &nbsp;
-  const onToastClose = <span class="fstat-no" title="function not covered" >(id: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    dispatch(closeToast(id));</span>
-<span class="cstat-no" title="statement not covered" >    clearInterval(autoClose);</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
+  const onToastClose = (id: number) =&gt; {
+    dispatch(closeToast(id));
+    clearInterval(autoClose);
+  };
 &nbsp;
   return (
     &lt;div className={`notification-container ${props.position}`}&gt;
       {props.list.map((toast, i) =&gt; {
-<span class="cstat-no" title="statement not covered" >        autoClose = setTimeout(() =&gt; toast.id &amp;&amp; dispatch(closeToast(toast.id)), 3000);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >          &lt;div</span>
-<span class="cstat-no" title="statement not covered" >            key={i}</span>
-<span class="cstat-no" title="statement not covered" >            onClick={() =&gt; toast.id &amp;&amp; onToastClose(toast.id)}</span>
-<span class="cstat-no" title="statement not covered" >            className={`notification toast ${props.position}`}</span>
-<span class="cstat-no" title="statement not covered" >            style={{ borderLeft: 'solid ' + '8px ' + toast.backgroundColor }}</span>
-<span class="cstat-no" title="statement not covered" >          &gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;p className="notification-title"&gt;{toast.title}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >              &lt;p className="notification-message"&gt;{toast.description}&lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >          &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >        );</span>
+        autoClose = setTimeout(() =&gt; toast.id &amp;&amp; dispatch(closeToast(toast.id)), 3000);
+&nbsp;
+        return (
+          &lt;div
+            key={i}
+            onClick={() =&gt; toast.id &amp;&amp; onToastClose(toast.id)}
+            className={`notification toast ${props.position}`}
+            style={{ borderLeft: 'solid ' + '8px ' + toast.backgroundColor }}
+          &gt;
+            &lt;div&gt;
+              &lt;p className="notification-title"&gt;{toast.title}&lt;/p&gt;
+              &lt;p className="notification-message"&gt;{toast.description}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        );
       })}
     &lt;/div&gt;
   );
@@ -193,7 +193,7 @@ export function Toast(props: Props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-13T18:23:40.431Z
+                at 2023-04-15T09:08:01.222Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

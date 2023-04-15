@@ -1,21 +1,20 @@
-import { describe, it, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it } from 'vitest';
+import { screen, waitFor } from '@testing-library/react';
+import { renderWithProviders } from '../../utils/redux-render';
 
 import React from 'react';
 import { CardList } from './CardList.component';
-import { characters } from '../../mock/characters';
-
-const onCardClick = vi.fn();
 
 describe('CardLIst', () => {
   it('renders correctly', () => {
-    render(<CardList data={characters} onCardClick={onCardClick} />);
-    const cardList = screen.getByTestId('card-list-element');
-    expect(cardList).toBeInTheDocument();
+    renderWithProviders(<CardList />);
+    waitFor(() => {
+      expect(screen.queryByTestId('card-list-element')).toBeInTheDocument();
+    });
   });
-  it('renders list of cards', () => {
-    render(<CardList data={characters} onCardClick={onCardClick} />);
-    const cards = screen.getAllByTestId('card-element');
-    expect(cards).toHaveLength(characters.length);
+  it('renders list of cards', async () => {
+    renderWithProviders(<CardList />);
+    const cards = await screen.findAllByTestId('card-element');
+    expect(cards).toHaveLength(20);
   });
 });

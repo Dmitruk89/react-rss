@@ -4,9 +4,11 @@ import type { RenderOptions } from '@testing-library/react';
 import type { PreloadedState } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import type { AppStore, RootState } from '../store';
+import { AppStore, RootState, setupStore } from '../store';
 // As a basic setup, import your same slice reducers
 import searchReducer from '../features/search/searchSlice';
+import toastReducer from '../features/toast/toastSlice';
+import formReducer from '../features/form/formSlice';
 import charactersReducer from '../features/characters/charactersSlice';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
@@ -19,10 +21,7 @@ export function renderWithProviders(
   {
     preloadedState = {},
     // Automatically create a store instance if no store was passed in
-    store = configureStore({
-      reducer: { search: searchReducer, characters: charactersReducer },
-      preloadedState,
-    }),
+    store = setupStore(preloadedState),
     ...renderOptions
   }: ExtendedRenderOptions = {}
 ) {

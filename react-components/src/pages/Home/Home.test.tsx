@@ -17,7 +17,7 @@ describe('Home page', () => {
     const modalElement = screen.queryByTestId('modal-element');
 
     expect(searchElement).toBeInTheDocument();
-    expect(cardListElement).not.toBeInTheDocument();
+    expect(cardListElement).toBeInTheDocument();
     expect(modalElement).not.toBeInTheDocument();
   });
   it('renders error on bad request correctly', async () => {
@@ -49,7 +49,7 @@ describe('Home page', () => {
     await waitFor(() => {
       expect(screen.getByTestId('card-list-element')).toBeInTheDocument();
     });
-    const card = screen.getAllByTestId('card-element');
+    const card = await screen.findAllByTestId('card-element');
     await user.click(card[0]);
     await waitFor(() => {
       expect(screen.getByTestId('modal-element')).toBeInTheDocument();

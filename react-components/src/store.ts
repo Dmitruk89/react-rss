@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
   characters: charactersReducer,
   form: formReducer,
   toast: toastReducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
 });
 
 export const store = configureStore({
@@ -29,6 +30,10 @@ export const store = configureStore({
 export function setupStore(preloadedState?: PreloadedState<RootState>) {
   return configureStore({
     reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false,
+      }).concat(apiSlice.middleware),
     preloadedState,
   });
 }

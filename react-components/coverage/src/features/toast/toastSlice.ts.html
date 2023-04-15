@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.52% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/46</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.52% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/46</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,28 +127,28 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -172,33 +172,33 @@ export const toastSlice = createSlice({
   name: 'toast',
   initialState,
   reducers: {
-    showSuccess: <span class="fstat-no" title="function not covered" >(state) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      const id = Math.floor(Math.random() * 100 + 1);</span>
-<span class="cstat-no" title="statement not covered" >      const toastProperties = {</span>
-<span class="cstat-no" title="statement not covered" >        id,</span>
-<span class="cstat-no" title="statement not covered" >        title: 'Success',</span>
-<span class="cstat-no" title="statement not covered" >        description: 'Form was successfully submitted',</span>
-<span class="cstat-no" title="statement not covered" >        backgroundColor: 'rgb(0 225 0)',</span>
-<span class="cstat-no" title="statement not covered" >      };</span>
-<span class="cstat-no" title="statement not covered" >      state.toastList.push(toastProperties);</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-    showError: <span class="fstat-no" title="function not covered" >(state) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      const id = Math.floor(Math.random() * 100 + 1);</span>
-<span class="cstat-no" title="statement not covered" >      const toastProperties = {</span>
-<span class="cstat-no" title="statement not covered" >        id,</span>
-<span class="cstat-no" title="statement not covered" >        title: 'Error',</span>
-<span class="cstat-no" title="statement not covered" >        description: 'Form was not submitted',</span>
-<span class="cstat-no" title="statement not covered" >        backgroundColor: '#d9534f',</span>
-<span class="cstat-no" title="statement not covered" >      };</span>
-<span class="cstat-no" title="statement not covered" >      state.toastList.push(toastProperties);</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
-    closeToast: <span class="fstat-no" title="function not covered" >(state, action: PayloadAction&lt;number&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      state.toastList = state.toastList.filter((i) =&gt; i.id !== action.payload);</span>
-<span class="cstat-no" title="statement not covered" >    },</span>
+    showSuccess: (state) =&gt; {
+      const id = Math.floor(Math.random() * 100 + 1);
+      const toastProperties = {
+        id,
+        title: 'Success',
+        description: 'Form was successfully submitted',
+        backgroundColor: 'rgb(0 225 0)',
+      };
+      state.toastList.push(toastProperties);
+    },
+    showError: (state) =&gt; {
+      const id = Math.floor(Math.random() * 100 + 1);
+      const toastProperties = {
+        id,
+        title: 'Error',
+        description: 'Form was not submitted',
+        backgroundColor: '#d9534f',
+      };
+      state.toastList.push(toastProperties);
+    },
+    closeToast: (state, action: PayloadAction&lt;number&gt;) =&gt; {
+      state.toastList = state.toastList.filter((i) =&gt; i.id !== action.payload);
+    },
   },
 }<span class="fstat-no" title="function not covered" >);</span>
 &nbsp;
-export const { showSuccess, showError, closeToast } = toastSlice.<span class="fstat-no" title="function not covered" >actions;</span>
+export const { showSuccess, showError, closeToast } = toastSlice.actions;
 &nbsp;
 export default toastSlice.reducer;
 &nbsp;</pre></td></tr></table></pre>
@@ -208,7 +208,7 @@ export default toastSlice.reducer;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-13T18:23:40.431Z
+                at 2023-04-15T09:08:01.222Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.35% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/39</span>
+                <span class='fraction'>39/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.35% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/39</span>
+                <span class='fraction'>39/39</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -112,35 +112,35 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { Character } from 'types/character';
 import { Card } from '../Card/Card.component';
@@ -163,17 +163,17 @@ export function CardList() {
 &nbsp;
   if (isLoading) {
     CharacterListcontent = &lt;LoadingSpinner /&gt;;
-<span class="branch-0 cbranch-no" title="branch not covered" >  } else if (isSuccess) {</span>
-<span class="cstat-no" title="statement not covered" >    CharacterListcontent = reduxCharacters.results.map((character: Character) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Card key={character.id} content={character} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >    ));</span>
-<span class="cstat-no" title="statement not covered" >  } else if (isError) {</span>
-<span class="cstat-no" title="statement not covered" >    CharacterListcontent = (</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className="error__message" data-testid="request-error-element"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        No characters begins with your query!</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    );</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  } else if (isSuccess) {
+    CharacterListcontent = reduxCharacters.results.map((character: Character) =&gt; (
+      &lt;Card key={character.id} content={character} /&gt;
+    ));
+  } else if (isError) {
+    CharacterListcontent = (
+      &lt;div className="error__message" data-testid="request-error-element"&gt;
+        No characters begins with your query!
+      &lt;/div&gt;
+    );
+  }
   return (
     &lt;ul data-testid="card-list-element" className="card__container"&gt;
       {CharacterListcontent}
@@ -187,7 +187,7 @@ export function CardList() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-13T18:23:40.431Z
+                at 2023-04-15T09:08:01.222Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
