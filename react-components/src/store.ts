@@ -4,7 +4,7 @@ import charactersReducer from './features/characters/charactersSlice';
 import formReducer from './features/form/formSlice';
 import toastReducer from './features/toast/toastSlice';
 import { apiSlice } from './features/api/apiSlice';
-// Create the root reducer independently to obtain the RootState type
+
 const rootReducer = combineReducers({
   search: searchReducer,
   characters: charactersReducer,
