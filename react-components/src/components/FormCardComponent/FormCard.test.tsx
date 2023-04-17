@@ -1,5 +1,6 @@
 import { describe, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithProviders } from '../../utils/redux-render';
 
 import React from 'react';
 import { FormCard } from './FormCard.component';
@@ -30,7 +31,7 @@ const formData = {
 
 describe('FormCard', () => {
   it('renders correctly', () => {
-    render(<FormCard key={1} formData={formData} />);
+    renderWithProviders(<FormCard key={1} formData={formData} />);
     const name = screen.getByText('Dimon');
     expect(name).toBeInTheDocument();
   });

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/44</span>
+                <span class='fraction'>43/43</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/44</span>
+                <span class='fraction'>43/43</span>
             </div>
         
             
@@ -106,8 +106,7 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -120,62 +119,60 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">50x</span>
-<span class="cline-any cline-yes">35x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { ChangeEvent, useState } from 'react';
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { ChangeEvent } from 'react';
 import './Searchbar.component.css';
 import { BsSearch } from 'react-icons/bs';
 import { useForm, SubmitHandler } from 'react-hook-form';
-&nbsp;
-interface Props {
-  onSearchSubmit: (data: queryData | null) =&gt; void;
-}
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { query, inputChange } from '../../features/search/searchSlice';
 &nbsp;
 export interface queryData {
   name?: string;
 }
 &nbsp;
-export function SearchBar(props: Props) {
-  const { onSearchSubmit } = props;
-  const [query, setQuery] = useState(localStorage.getItem('inputValue') || '');
+export function SearchBar() {
+  const searchInputValue = useSelector((state: RootState) =&gt; state.search.searchInputvalue);
+  const dispatch = useDispatch();
+&nbsp;
   const { register, handleSubmit } = useForm&lt;queryData&gt;();
 &nbsp;
   const hadleChange = (event: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
-    setQuery(event.target.value);
-    localStorage.setItem('inputValue', event.target.value);
+    dispatch(inputChange(event.target.value));
   };
 &nbsp;
-  const onSubmit: SubmitHandler&lt;queryData&gt; = (formData) =&gt; {
-    onSearchSubmit(formData);
+  const onSubmit: SubmitHandler&lt;queryData&gt; = () =&gt; {
+    dispatch(query(searchInputValue));
   };
 &nbsp;
   return (
@@ -184,7 +181,7 @@ export function SearchBar(props: Props) {
         &lt;input
           {...register('name')}
           type="text"
-          value={query}
+          value={searchInputValue}
           placeholder="your query.."
           onInput={hadleChange}
         &gt;&lt;/input&gt;
@@ -202,7 +199,7 @@ export function SearchBar(props: Props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-11T06:00:37.284Z
+                at 2023-04-15T09:08:01.222Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

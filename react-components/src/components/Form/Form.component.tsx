@@ -3,23 +3,13 @@ import './Form.component.css';
 
 import { genders } from '../../mock/genders';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../../features/form/formSlice';
+import { formData } from '../../types/formData';
+import { showError, showSuccess } from '../../features/toast/toastSlice';
 
-interface Props {
-  onFormSubmit: (data: formData | null) => void;
-}
-
-export interface formData {
-  name?: string;
-  agree?: string;
-  birthday?: string;
-  avatarFile: FileList;
-  avatarUrl?: string;
-  spam?: string;
-  gender?: string;
-}
-
-export function Form(props: Props) {
-  const { onFormSubmit } = props;
+export function Form() {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -30,14 +20,16 @@ export function Form(props: Props) {
 
   const onSubmit: SubmitHandler<formData> = (formData) => {
     formData = { ...formData, avatarUrl: handleAvatarInput(formData.avatarFile) };
-    onFormSubmit(formData);
+    dispatch(addUser(formData));
+    dispatch(showSuccess());
   };
 
   useEffect(() => {
     if (formState.isSubmitted && !formState.isValid) {
-      onFormSubmit(null);
+      dispatch(addUser(null));
+      dispatch(showError());
     }
-  }, [formState.isSubmitted, onFormSubmit, formState.isValid]);
+  }, [formState.isSubmitted, dispatch, formState.isValid]);
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {

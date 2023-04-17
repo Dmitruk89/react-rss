@@ -1,68 +1,13 @@
-import { queryData, SearchBar } from '../../components/Searchbar/Searchbar.component';
-import React, { useEffect, useState } from 'react';
+import { SearchBar } from '../../components/Searchbar/Searchbar.component';
+import React from 'react';
 
 import { CardList } from '../../components/CardList/CardList.component';
 import { Modal } from '../../components/Modal/Modal.component';
-import { LoadingSpinner } from '../../components/Spinner/Spinner.component';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
 
 export function Home() {
-  const [characters, setCharachters] = useState(null);
-  const [character, setCharachter] = useState(null);
-  const [error, setError] = useState<string | null>();
-  const [isCharacterPending, setIsCharacterPending] = useState(false);
-  const [isCharactersPending, setIsCharactersPending] = useState(false);
-  const [isRequestSuccessful, setIsRequestSuccessful] = useState(false);
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const apiGet = (url: string) => {
-    setError(null);
-    setCharachter(null);
-    fetch(url)
-      .then((response) => {
-        if (response.status === 200) {
-          setIsRequestSuccessful(true);
-          return response.json();
-        }
-      })
-      .then((data) => {
-        if (data.results) {
-          setCharachters(data.results);
-          setIsCharactersPending(false);
-        } else {
-          setCharachter(data);
-          setIsCharacterPending(false);
-        }
-        setIsRequestSuccessful(false);
-      })
-      .catch(() => {
-        setError('No characters begins with your query!');
-        setIsCharactersPending(false);
-      });
-  };
-
-  const handleSearchSubmit = (data: queryData | null) => {
-    if (data) {
-      apiGet(`https://rickandmortyapi.com/api/character/?name=${data.name}`);
-      setIsCharactersPending(true);
-    }
-  };
-
-  const onCardClick = (id: number) => {
-    apiGet(`https://rickandmortyapi.com/api/character/${id}`);
-    setIsCharacterPending(true);
-  };
-
-  useEffect(() => {
-    if (isRequestSuccessful) {
-      setIsModalOpen(true);
-    }
-  }, [isRequestSuccessful]);
-
-  useEffect(() => {
-    const value = localStorage.getItem('inputValue') || '';
-    apiGet(`https://rickandmortyapi.com/api/character/?name=${value}`);
-  }, []);
+  const isModalOpen = useSelector((state: RootState) => state.characters.isModalOpen);
 
   return (
     <div>
@@ -70,19 +15,9 @@ export function Home() {
         Search by name of the character. e. g. Rick or Morty. The letters the name begins or empty
         query are also the valid values.
       </div>
-      <SearchBar onSearchSubmit={handleSearchSubmit} />
-      {error && (
-        <div className="error__message" data-testid="request-error-element">
-          {error}
-        </div>
-      )}
-      {!error && !isCharactersPending && characters && (
-        <CardList data={characters} onCardClick={onCardClick} />
-      )}
-      {(isCharacterPending || isCharactersPending) && <LoadingSpinner />}
-      {!isCharacterPending && character && isModalOpen && (
-        <Modal setIsOpen={setIsModalOpen} content={character} />
-      )}
+      <SearchBar />
+      <CardList />
+      {isModalOpen && <Modal />}
     </div>
   );
 }

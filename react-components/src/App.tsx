@@ -6,6 +6,8 @@ import { Home } from './pages/Home/Home';
 import NotFound from './pages/NotFound';
 import { About } from './pages/About';
 import { FormPage } from './pages/Form/FormPage';
+import { store } from './store';
+import { Provider } from 'react-redux';
 
 export function App() {
   return (
@@ -23,8 +25,10 @@ export function App() {
 
 export function WrappedApp() {
   return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   );
 }
