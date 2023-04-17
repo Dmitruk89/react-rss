@@ -5,7 +5,7 @@ import { genders } from '../../mock/genders';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../features/form/formSlice';
-import { formData } from 'types/formData';
+import { formData } from '../../types/formData';
 import { showError, showSuccess } from '../../features/toast/toastSlice';
 
 export function Form() {

@@ -1,4 +1,4 @@
-import { formData } from 'components/Form/Form.component';
+import { formData } from '../../types/formData';
 import React from 'react';
 import './FormCard.component.css';
 

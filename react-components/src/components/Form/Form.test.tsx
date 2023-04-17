@@ -6,8 +6,6 @@ import React from 'react';
 import { Form } from './Form.component';
 import userEvent from '@testing-library/user-event';
 
-const handleFormSubmit = vi.fn();
-
 global.URL.createObjectURL = vi.fn();
 
 describe('FormComponent', () => {

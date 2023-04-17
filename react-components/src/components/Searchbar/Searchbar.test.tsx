@@ -1,4 +1,4 @@
-import { describe, it, vi } from 'vitest';
+import { describe, it } from 'vitest';
 import { screen } from '@testing-library/react';
 import { renderWithProviders } from '../../utils/redux-render';
 
