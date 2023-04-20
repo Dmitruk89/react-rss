@@ -4,19 +4,31 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "start": "vite",
     "preview": "vite preview",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "prepare": "cd .. && husky install react-components/.husky"
+    "prepare": "cd .. && husky install react-components/.husky",
+    "dev": "node server.js",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "serve": "set NODE_ENV=production node server.js",
+    "cy:open-e2e": "cypress open --e2e --browser chrome",
+    "cy:open-unit": "cypress open --component --browser chrome",
+    "cy:run-e2e": "cypress run --e2e",
+    "cy:run-unit": "cypress run --component",
+    "cy:e2e": "start-server-and-test dev http-get://localhost:3333 cy:open-e2e"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/user-event": "^14.4.3",
     "eslint-plugin-jest-dom": "^4.0.3",
+    "express": "^4.18.2",
+    "h3": "^1.6.4",
     "jest-mock": "^29.5.0",
+    "listhen": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.8",
@@ -24,6 +36,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "redux-mock-store": "^1.5.4",
+    "sirv": "^2.0.2",
     "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
@@ -37,6 +50,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.29.3",
     "cross-fetch": "^3.1.5",
+    "cypress": "^12.10.0",
     "eslint": "^8.35.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -51,6 +65,7 @@
     "lint-staged": "^12.4.1",
     "msw": "^1.2.1",
     "prettier": "^2.8.4",
+    "start-server-and-test": "^2.0.0",
     "typescript": "^4.9.5",
     "vite": "^4.1.4",
     "vitest": "^0.29.2"
