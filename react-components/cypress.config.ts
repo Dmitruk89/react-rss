@@ -1,10 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { defineConfig } from 'cypress';
+import registerCodeCoverageTasks from '@cypress/code-coverage/task';
 
 export default defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3333',
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      registerCodeCoverageTasks(on, config);
+
+      return config;
     },
   },
 

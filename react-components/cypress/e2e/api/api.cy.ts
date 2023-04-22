@@ -14,4 +14,7 @@ describe('Check https://rickandmortyapi.com/api/character/ request', () => {
       expect(response.body).to.have.property('results');
     });
   });
+  afterEach(() => {
+    cy.window().trigger('unload');
+  });
 });
