@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.05% </span>
+                <span class="strong">89.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/19</span>
+                <span class='fraction'>17/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.42% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/14</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -146,34 +146,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,8 +186,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,8 +193,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,28 +220,28 @@ import { RootState } from 'store';
 import { LoadingSpinner } from '../Spinner/Spinner.component';
 import { toggleModal } from '../../features/characters/charactersSlice';
 &nbsp;
-export const Modal<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > = <span class="fstat-no" title="function not covered" >(</span>) =&gt; <span class="cstat-no" title="statement not covered" >{</span></span></span>
-  const characterId = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate: RootState) =&gt; <span class="cstat-no" title="statement not covered" >state.characters.selectedCharacterId)</span>;</span>
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+export const Modal = () =&gt; {
+  const characterId = useSelector((state: RootState) =&gt; state.characters.selectedCharacterId);
+  const dispatch = useDispatch();
   const {
     data: reduxCharacter,
     isLoading,
     isSuccess,
     isError,
-  } = <span class="cstat-no" title="statement not covered" >useGetCharacterQuery({ id: characterId });</span>
+  } = useGetCharacterQuery({ id: characterId });
 &nbsp;
   let modalContent;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >    modalContent = &lt;LoadingSpinner /&gt;;</span>
-<span class="cstat-no" title="statement not covered" >  } else if (isSuccess) {</span>
-<span class="cstat-no" title="statement not covered" >    modalContent = (</span>
+  if (isLoading) {
+    modalContent = &lt;LoadingSpinner /&gt;;
+  } else if (isSuccess) {
+    modalContent = (
       &lt;&gt;
         &lt;h5 className="heading"&gt;{reduxCharacter.name}&lt;/h5&gt;
         &lt;button
           className="closeBtn"
           data-testid="modal-close-btn"
-          onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >d</span>ispatch(toggleModal(false))}</span>
+          onClick={() =&gt; dispatch(toggleModal(false))}
         &gt;
           &lt;RiCloseLine /&gt;
         &lt;/button&gt;
@@ -266,7 +266,7 @@ export const Modal<span class="cstat-no" title="statement not covered" ><span cl
         &lt;/div&gt;
       &lt;/&gt;
     );
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>} else if (isError) {</span>
+<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span><span class="missing-if-branch" title="else path not taken" >E</span>} else if (isError) {</span>
 <span class="cstat-no" title="statement not covered" >    modalContent = (</span>
       &lt;div className="error__message" data-testid="request-error-element"&gt;
         something went wrong!
@@ -274,9 +274,9 @@ export const Modal<span class="cstat-no" title="statement not covered" ><span cl
     );
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;&gt;
-      &lt;div className="darkBG" onClick={<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >d</span>ispatch(toggleModal(false))} </span>/&gt;
+      &lt;div className="darkBG" onClick={() =&gt; dispatch(toggleModal(false))} /&gt;
       &lt;div className="centered"&gt;
         &lt;div className="modal" data-testid="modal-element"&gt;
           {modalContent}
@@ -292,7 +292,7 @@ export const Modal<span class="cstat-no" title="statement not covered" ><span cl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-22T08:58:06.265Z
+                at 2023-04-22T17:17:25.640Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
