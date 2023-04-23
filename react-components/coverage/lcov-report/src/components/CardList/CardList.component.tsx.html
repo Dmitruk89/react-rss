@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">18.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>3/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>3/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,36 +111,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-yes">82x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">360x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { Character } from 'types/character';
 import { Card } from '../Card/Card.component';
@@ -150,31 +150,31 @@ import { LoadingSpinner } from '../Spinner/Spinner.component';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 &nbsp;
-export function CardList() {
-  const queryValue = useSelector((state: RootState) =&gt; state.search.queryValue);
+export function <span class="fstat-no" title="function not covered" >CardList<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>) <span class="cstat-no" title="statement not covered" >{</span></span></span>
+  const queryValue = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate: RootState) =&gt; <span class="cstat-no" title="statement not covered" >state.search.queryValue)</span>;</span>
   const {
     data: reduxCharacters,
     isLoading,
     isSuccess,
     isError,
-  } = useGetCharactersQuery({ name: queryValue });
+  } = <span class="cstat-no" title="statement not covered" >useGetCharactersQuery({ name: queryValue });</span>
 &nbsp;
   let CharacterListcontent;
 &nbsp;
-  if (isLoading) {
-    CharacterListcontent = &lt;LoadingSpinner /&gt;;
-  } else if (isSuccess) {
-    CharacterListcontent = reduxCharacters.results.map((character: Character) =&gt; (
-      &lt;Card key={character.id} content={character} /&gt;
+<span class="cstat-no" title="statement not covered" >  if (isLoading) {</span>
+<span class="cstat-no" title="statement not covered" >    CharacterListcontent = &lt;LoadingSpinner /&gt;;</span>
+<span class="cstat-no" title="statement not covered" >  } else if (isSuccess) {</span>
+<span class="cstat-no" title="statement not covered" >    CharacterListcontent = reduxCharacters.results.map(<span class="fstat-no" title="function not covered" >(c</span>haracter: Character) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >      &lt;Card key={character.id} content={character} /&gt;</span>
     ));
-  } else if (isError) {
-    CharacterListcontent = (
+<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>} else if (isError) {</span>
+<span class="cstat-no" title="statement not covered" >    CharacterListcontent = (</span>
       &lt;div className="error__message" data-testid="request-error-element"&gt;
         No characters begins with your query!
       &lt;/div&gt;
     );
   }
-  return (
+<span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;ul data-testid="card-list-element" className="card__container"&gt;
       {CharacterListcontent}
     &lt;/ul&gt;
@@ -187,7 +187,7 @@ export function CardList() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-22T17:17:25.640Z
+                at 2023-04-23T07:14:52.152Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
