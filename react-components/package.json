@@ -19,7 +19,7 @@
     "cy:open-unit": "cypress open --component --browser chrome",
     "cy:run-e2e": "cypress run --e2e",
     "cy:run-unit": "cypress run --component",
-    "e2e": "start-server-and-test dev http-get://localhost:3333 cy:open-e2e",
+    "e2e": "start-server-and-test dev http-get://localhost:3333 cy:run-e2e",
     "e2e:coverage": "npm run e2e && npm run cy:report"
   },
   "dependencies": {

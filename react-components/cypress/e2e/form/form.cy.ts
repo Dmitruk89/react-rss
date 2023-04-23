@@ -19,7 +19,7 @@ describe('Form interaction', () => {
     cy.get('.form input[type="submit"]').click();
     cy.get('.notification-message').should('have.text', 'Form was successfully submitted');
     cy.get('.validation').should('have.text', '');
-    cy.wait(3000);
+    cy.get('.notification-message').click();
     cy.get('.notification-message').should('not.exist');
   });
 });

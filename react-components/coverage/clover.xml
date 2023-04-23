@@ -1,285 +1,285 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682234874739" clover="3.2.0">
-  <project timestamp="1682234874739" name="All files">
-    <metrics statements="154" coveredstatements="99" conditionals="36" coveredconditionals="15" methods="67" coveredmethods="36" elements="257" coveredelements="150" complexity="0" loc="154" ncloc="154" packages="19" files="23" classes="23"/>
+<coverage generated="1682236131185" clover="3.2.0">
+  <project timestamp="1682236131185" name="All files">
+    <metrics statements="154" coveredstatements="150" conditionals="36" coveredconditionals="34" methods="67" coveredmethods="65" elements="257" coveredelements="249" complexity="0" loc="154" ncloc="154" packages="19" files="23" classes="23"/>
     <package name="src">
       <metrics statements="12" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="6" coveredmethods="4"/>
       <file name="App.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/App.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
-        <line num="1" count="48" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="12" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="26" count="12" type="stmt"/>
-        <line num="27" count="12" type="stmt"/>
-        <line num="34" count="6" type="stmt"/>
+        <line num="1" count="240" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="60" type="stmt"/>
+        <line num="24" count="30" type="stmt"/>
+        <line num="26" count="60" type="stmt"/>
+        <line num="27" count="60" type="stmt"/>
+        <line num="34" count="30" type="stmt"/>
       </file>
       <file name="entry.client.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/entry.client.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="12" count="6" type="stmt"/>
+        <line num="12" count="30" type="stmt"/>
       </file>
       <file name="store.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/store.ts">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="25" count="6" type="stmt"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="16" count="30" type="stmt"/>
+        <line num="25" count="30" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Card">
-      <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="Card.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Card/Card.component.tsx">
-        <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="25" count="6" type="stmt"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="12" count="1080" type="stmt"/>
+        <line num="13" count="1080" type="stmt"/>
+        <line num="15" count="1080" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="1080" type="stmt"/>
+        <line num="25" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.CardList">
-      <metrics statements="12" coveredstatements="7" conditionals="5" coveredconditionals="1" methods="4" coveredmethods="3"/>
+      <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
       <file name="CardList.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/CardList/CardList.component.tsx">
-        <metrics statements="12" coveredstatements="7" conditionals="5" coveredconditionals="1" methods="4" coveredmethods="3"/>
-        <line num="10" count="12" type="stmt"/>
-        <line num="11" count="24" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="21" count="12" type="cond" truecount="1" falsecount="1"/>
-        <line num="22" count="12" type="stmt"/>
-        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="27" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="34" count="12" type="stmt"/>
-        <line num="39" count="6" type="stmt"/>
+        <metrics statements="12" coveredstatements="12" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="10" count="146" type="stmt"/>
+        <line num="11" count="307" type="stmt"/>
+        <line num="17" count="146" type="stmt"/>
+        <line num="21" count="146" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="80" type="stmt"/>
+        <line num="23" count="66" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="54" type="stmt"/>
+        <line num="25" count="1080" type="stmt"/>
+        <line num="27" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="6" type="stmt"/>
+        <line num="34" count="146" type="stmt"/>
+        <line num="39" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Form">
-      <metrics statements="22" coveredstatements="13" conditionals="10" coveredconditionals="4" methods="7" coveredmethods="5"/>
+      <metrics statements="22" coveredstatements="22" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7"/>
       <file name="Form.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Form/Form.component.tsx">
-        <metrics statements="22" coveredstatements="13" conditionals="10" coveredconditionals="4" methods="7" coveredmethods="5"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="28" count="4" type="cond" truecount="1" falsecount="2"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="35" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="40" count="4" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-        <line num="47" count="420" type="stmt"/>
-        <line num="53" count="4" type="stmt"/>
-        <line num="124" count="6" type="stmt"/>
+        <metrics statements="22" coveredstatements="22" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7"/>
+        <line num="11" count="58" type="stmt"/>
+        <line num="12" count="58" type="stmt"/>
+        <line num="19" count="58" type="stmt"/>
+        <line num="21" count="58" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="27" count="58" type="stmt"/>
+        <line num="28" count="26" type="cond" truecount="3" falsecount="0"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="34" count="58" type="stmt"/>
+        <line num="35" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="40" count="58" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="46" count="58" type="stmt"/>
+        <line num="47" count="6090" type="stmt"/>
+        <line num="53" count="58" type="stmt"/>
+        <line num="124" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.FormCardComponent">
-      <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="FormCard.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/FormCardComponent/FormCard.component.tsx">
-        <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="1"/>
-        <line num="1" count="42" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="30" type="stmt"/>
+        <line num="11" count="10" type="stmt"/>
+        <line num="21" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Header">
       <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="Header.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Header/Header.component.tsx">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
-        <line num="8" count="16" type="stmt"/>
-        <line num="9" count="16" type="stmt"/>
-        <line num="12" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="19" count="16" type="stmt"/>
-        <line num="40" count="6" type="stmt"/>
+        <line num="8" count="68" type="stmt"/>
+        <line num="9" count="68" type="stmt"/>
+        <line num="12" count="28" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="19" count="68" type="stmt"/>
+        <line num="40" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Modal">
-      <metrics statements="14" coveredstatements="3" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <metrics statements="14" coveredstatements="12" conditionals="5" coveredconditionals="3" methods="5" coveredmethods="5"/>
       <file name="Modal.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Modal/Modal.component.tsx">
-        <metrics statements="14" coveredstatements="3" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
-        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <metrics statements="14" coveredstatements="12" conditionals="5" coveredconditionals="3" methods="5" coveredmethods="5"/>
+        <line num="10" count="30" type="stmt"/>
+        <line num="11" count="57" type="stmt"/>
+        <line num="12" count="30" type="stmt"/>
+        <line num="18" count="30" type="stmt"/>
+        <line num="22" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="24" type="stmt"/>
+        <line num="24" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="25" count="6" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
         <line num="56" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="74" count="6" type="stmt"/>
+        <line num="64" count="30" type="stmt"/>
+        <line num="66" count="3" type="stmt"/>
+        <line num="74" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Searchbar">
-      <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
       <file name="Searchbar.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Searchbar/Searchbar.component.tsx">
-        <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="18" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
-        <line num="43" count="6" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="13" count="100" type="stmt"/>
+        <line num="14" count="261" type="stmt"/>
+        <line num="15" count="100" type="stmt"/>
+        <line num="17" count="100" type="stmt"/>
+        <line num="19" count="100" type="stmt"/>
+        <line num="20" count="18" type="stmt"/>
+        <line num="23" count="100" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="27" count="100" type="stmt"/>
+        <line num="43" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Spinner">
       <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="Spinner.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Spinner/Spinner.component.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="42" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="6" type="stmt"/>
-        <line num="5" count="12" type="stmt"/>
-        <line num="10" count="6" type="stmt"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="30" type="stmt"/>
+        <line num="5" count="104" type="stmt"/>
+        <line num="10" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Toast">
-      <metrics statements="10" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="2"/>
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <file name="Toast.component.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/components/Toast/Toast.component.tsx">
-        <metrics statements="10" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="2"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="20" count="4" type="stmt"/>
-        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="41" count="6" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="11" count="38" type="stmt"/>
+        <line num="12" count="38" type="stmt"/>
+        <line num="15" count="38" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="38" type="stmt"/>
+        <line num="23" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.features.api">
-      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="apiSlice.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/features/api/apiSlice.ts">
-        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="6" count="6" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="30" type="stmt"/>
+        <line num="6" count="30" type="stmt"/>
+        <line num="9" count="23" type="stmt"/>
+        <line num="10" count="23" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="27" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.features.characters">
-      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="charactersSlice.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/features/characters/charactersSlice.ts">
-        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="29" count="6" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="10" count="30" type="stmt"/>
+        <line num="16" count="30" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="29" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.features.form">
-      <metrics statements="5" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="formSlice.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/features/form/formSlice.ts">
-        <metrics statements="5" coveredstatements="3" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="17" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="12" count="30" type="stmt"/>
+        <line num="17" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="24" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.features.search">
-      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="searchSlice.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/features/search/searchSlice.ts">
-        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="8" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="26" count="6" type="stmt"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="13" count="30" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="18" type="stmt"/>
+        <line num="26" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.features.toast">
-      <metrics statements="10" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="toastSlice.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/features/toast/toastSlice.ts">
-        <metrics statements="10" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="44" count="6" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="9" count="30" type="stmt"/>
+        <line num="14" count="30" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="39" count="7" type="stmt"/>
+        <line num="44" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.mock">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="genders.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/mock/genders.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="30" type="stmt"/>
       </file>
       <file name="paths.ts" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/mock/paths.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.pages">
       <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="About.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/pages/About.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="42" type="cond" truecount="1" falsecount="0"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="4" count="4" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="3" count="30" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="9" count="30" type="stmt"/>
       </file>
       <file name="NotFound.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/pages/NotFound.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="1" count="42" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
+        <line num="1" count="210" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="9" count="30" type="stmt"/>
+        <line num="11" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Form">
-      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
       <file name="FormPage.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/pages/Form/FormPage.tsx">
-        <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="26" count="6" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="10" count="38" type="stmt"/>
+        <line num="11" count="59" type="stmt"/>
+        <line num="12" count="59" type="stmt"/>
+        <line num="14" count="38" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="26" count="30" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.Home">
-      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <file name="Home.tsx" path="C:/Users/drukavichnikau/Documents/RSSchool/react-rss/react-components/src/pages/Home/Home.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
-        <line num="9" count="6" type="stmt"/>
-        <line num="10" count="15" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="9" count="76" type="stmt"/>
+        <line num="10" count="223" type="stmt"/>
+        <line num="12" count="76" type="stmt"/>
+        <line num="23" count="30" type="stmt"/>
       </file>
     </package>
   </project>
