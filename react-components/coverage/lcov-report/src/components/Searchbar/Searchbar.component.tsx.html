@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.42% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/14</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/10</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -118,23 +118,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,7 +146,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { ChangeEvent } from 'react';
 import './Searchbar.component.css';
 import { BsSearch } from 'react-icons/bs';
@@ -161,21 +161,21 @@ export interface queryData {
   name?: string;
 }
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >SearchBar<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>) <span class="cstat-no" title="statement not covered" >{</span></span></span>
-  const searchInputValue = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate: RootState) =&gt; <span class="cstat-no" title="statement not covered" >state.search.searchInputvalue)</span>;</span>
-  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+export function SearchBar() {
+  const searchInputValue = useSelector((state: RootState) =&gt; state.search.searchInputvalue);
+  const dispatch = useDispatch();
 &nbsp;
-  const { register, handleSubmit } = <span class="cstat-no" title="statement not covered" >useForm&lt;queryData&gt;();</span>
+  const { register, handleSubmit } = useForm&lt;queryData&gt;();
 &nbsp;
-  const hadleChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>vent: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {</span>
+  const hadleChange = <span class="fstat-no" title="function not covered" >(e</span>vent: ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
 <span class="cstat-no" title="statement not covered" >    dispatch(inputChange(event.target.value));</span>
   };
 &nbsp;
-  const onSubmit: SubmitHandler&lt;queryData&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+  const onSubmit: SubmitHandler&lt;queryData&gt; = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    dispatch(query(searchInputValue));</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;div className="container" data-testid="search-bar-element"&gt;
       &lt;form className="search-bar" onSubmit={handleSubmit(onSubmit)}&gt;
         &lt;input
@@ -199,7 +199,7 @@ export function <span class="fstat-no" title="function not covered" >SearchBar<s
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-23T07:14:52.152Z
+                at 2023-04-23T07:27:54.598Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

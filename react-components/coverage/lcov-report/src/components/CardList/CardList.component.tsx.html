@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.75% </span>
+                <span class="strong">68.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/16</span>
+                <span class='fraction'>11/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/12</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,36 +111,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { Character } from 'types/character';
 import { Card } from '../Card/Card.component';
@@ -150,20 +150,20 @@ import { LoadingSpinner } from '../Spinner/Spinner.component';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >CardList<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>) <span class="cstat-no" title="statement not covered" >{</span></span></span>
-  const queryValue = <span class="cstat-no" title="statement not covered" >useSelector(<span class="fstat-no" title="function not covered" >(s</span>tate: RootState) =&gt; <span class="cstat-no" title="statement not covered" >state.search.queryValue)</span>;</span>
+export function CardList() {
+  const queryValue = useSelector((state: RootState) =&gt; state.search.queryValue);
   const {
     data: reduxCharacters,
     isLoading,
     isSuccess,
     isError,
-  } = <span class="cstat-no" title="statement not covered" >useGetCharactersQuery({ name: queryValue });</span>
+  } = useGetCharactersQuery({ name: queryValue });
 &nbsp;
   let CharacterListcontent;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (isLoading) {</span>
-<span class="cstat-no" title="statement not covered" >    CharacterListcontent = &lt;LoadingSpinner /&gt;;</span>
-<span class="cstat-no" title="statement not covered" >  } else if (isSuccess) {</span>
+  if (isLoading) {
+    CharacterListcontent = &lt;LoadingSpinner /&gt;;
+<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="else path not taken" >E</span>} else if (isSuccess) {</span>
 <span class="cstat-no" title="statement not covered" >    CharacterListcontent = reduxCharacters.results.map(<span class="fstat-no" title="function not covered" >(c</span>haracter: Character) =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >      &lt;Card key={character.id} content={character} /&gt;</span>
     ));
@@ -174,7 +174,7 @@ export function <span class="fstat-no" title="function not covered" >CardList<sp
       &lt;/div&gt;
     );
   }
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;ul data-testid="card-list-element" className="card__container"&gt;
       {CharacterListcontent}
     &lt;/ul&gt;
@@ -187,7 +187,7 @@ export function <span class="fstat-no" title="function not covered" >CardList<sp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-23T07:14:52.152Z
+                at 2023-04-23T07:27:54.598Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
